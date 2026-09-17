@@ -1,0 +1,24 @@
+# Ambienti virtuali
+.venv/
+.venv_new/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# IDEs
+.idea/
+.vscode/
+
+# Dati troppo grandi per GitHub
+event_log.csv
+
+# File generati e di log
+*.log
+test_imports.py
+
+# Opzionale: decommenta se non vuoi caricare il dataset raw e i file pickle (i modelli)
+# data/aruba.20111101-20111128_20260218.180945.txt
+# data/models.pkl

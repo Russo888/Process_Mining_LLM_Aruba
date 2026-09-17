@@ -1,0 +1,7 @@
+{
+    "google_api_key": "",
+    "model_name": "gemini-3.6-flash",
+    "local_base_url": "http://localhost:11434/v1",
+    "local_model_name": "llama3.2",
+    "temperature": 0.7
+}

@@ -1,0 +1,14 @@
+{
+    "Alpha Miner": {
+        "fitness": 0.02414725635734427,
+        "precision": 0.7847533632286996
+    },
+    "Heuristic Miner": {
+        "fitness": 0.0032964135021097407,
+        "precision": 0.6024096385542168
+    },
+    "Inductive Miner": {
+        "fitness": 0.9979448159364118,
+        "precision": 0.1549063240255545
+    }
+}
