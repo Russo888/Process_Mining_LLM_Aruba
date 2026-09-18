@@ -32,8 +32,8 @@ st.set_page_config(
 # --- CSS PERSONALIZZATO ---
 st.markdown("""
 <style>
-    /* Sfondo principale chiaro */
-    .stApp { background-color: #f8fafc; }
+    /* Sfondo scuro */
+    .stApp { background-color: #0f172a; }
     
     /* Metriche */
     [data-testid="stMetric"] {
@@ -72,7 +72,7 @@ st.markdown("""
     }
 
     /* Sidebar */
-    [data-testid="stSidebar"] { background-color: #ffffff; border-right: 1px solid #e2e8f0; }
+    [data-testid="stSidebar"] { background-color: #0f172a; border-right: 1px solid #e2e8f0; }
     
     /* Card info */
     .info-card {
