@@ -19,6 +19,11 @@ event_log.csv
 *.log
 test_imports.py
 
+# File di ambiente e chiavi
+.env
+.env.*
+*.env
+
 # Opzionale: decommenta se non vuoi caricare il dataset raw e i file pickle (i modelli)
 # data/aruba.20111101-20111128_20260218.180945.txt
 # data/models.pkl
