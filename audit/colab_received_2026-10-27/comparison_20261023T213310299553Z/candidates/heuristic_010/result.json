@@ -1,0 +1,42 @@
+{
+  "status": "ok",
+  "id": "heuristic_010",
+  "label": "Heuristic dependency=0.10",
+  "metrics": {
+    "fitness": 0.9928559441900606,
+    "precision": 0.1430153164790552
+  },
+  "f1": 0.2500170785073081,
+  "fit_traces_percent": 15.0,
+  "shuffled_fitness": 0.9787797769516635,
+  "shuffled_fit_traces_percent": 0.0,
+  "order_fitness_gap": 0.014076167238397108,
+  "places": 25,
+  "transitions": 98,
+  "arcs": 200,
+  "silent_transitions": 86,
+  "missing_log_labels": [],
+  "evaluated_cases": [
+    "2012-01-07_Sera",
+    "2012-01-08_Notte",
+    "2012-01-08_Pomeriggio",
+    "2012-01-11_Mattina",
+    "2012-01-16_Sera",
+    "2012-02-03_Mattina",
+    "2012-02-03_Sera",
+    "2012-02-06_Pomeriggio",
+    "2012-02-11_Notte",
+    "2012-02-11_Mattina",
+    "2012-02-20_Notte",
+    "2012-02-24_Mattina",
+    "2012-02-27_Notte",
+    "2012-02-28_Notte",
+    "2012-02-29_Notte",
+    "2012-03-01_Mattina",
+    "2012-03-03_Pomeriggio",
+    "2012-03-07_Mattina",
+    "2012-03-08_Pomeriggio",
+    "2012-03-17_Sera"
+  ],
+  "seconds": 405.6577442109992
+}

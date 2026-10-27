@@ -1,0 +1,921 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pnml>
+  <net id="" type="http://www.pnml.org/version-2009/grammar/pnmlcoremodel">
+    <name>
+      <text></text>
+    </name>
+    <page id="n0">
+      <place id="pre_Ufficio">
+        <name>
+          <text>pre_Ufficio</text>
+        </name>
+      </place>
+      <place id="intplace_Cucina_Prep">
+        <name>
+          <text>intplace_Cucina_Prep</text>
+        </name>
+      </place>
+      <place id="source0">
+        <name>
+          <text>source0</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="pre_Corridoio">
+        <name>
+          <text>pre_Corridoio</text>
+        </name>
+      </place>
+      <place id="pre_Soggiorno">
+        <name>
+          <text>pre_Soggiorno</text>
+        </name>
+      </place>
+      <place id="pre_Uscita_Retro">
+        <name>
+          <text>pre_Uscita_Retro</text>
+        </name>
+      </place>
+      <place id="intplace_Uscita_Principale">
+        <name>
+          <text>intplace_Uscita_Principale</text>
+        </name>
+      </place>
+      <place id="pre_Uscita_Principale">
+        <name>
+          <text>pre_Uscita_Principale</text>
+        </name>
+      </place>
+      <place id="intplace_Uscita_Retro">
+        <name>
+          <text>intplace_Uscita_Retro</text>
+        </name>
+      </place>
+      <place id="intplace_Bagno_2">
+        <name>
+          <text>intplace_Bagno_2</text>
+        </name>
+      </place>
+      <place id="intplace_Soggiorno">
+        <name>
+          <text>intplace_Soggiorno</text>
+        </name>
+      </place>
+      <place id="sink0">
+        <name>
+          <text>sink0</text>
+        </name>
+      </place>
+      <place id="pre_Sala_Pranzo">
+        <name>
+          <text>pre_Sala_Pranzo</text>
+        </name>
+      </place>
+      <place id="pre_Cucina_Prep">
+        <name>
+          <text>pre_Cucina_Prep</text>
+        </name>
+      </place>
+      <place id="pre_Bagno_Principale">
+        <name>
+          <text>pre_Bagno_Principale</text>
+        </name>
+      </place>
+      <place id="pre_Bagno_2">
+        <name>
+          <text>pre_Bagno_2</text>
+        </name>
+      </place>
+      <place id="pre_Camera_2">
+        <name>
+          <text>pre_Camera_2</text>
+        </name>
+      </place>
+      <place id="intplace_Bagno_Principale">
+        <name>
+          <text>intplace_Bagno_Principale</text>
+        </name>
+      </place>
+      <place id="pre_Garage">
+        <name>
+          <text>pre_Garage</text>
+        </name>
+      </place>
+      <place id="intplace_Corridoio">
+        <name>
+          <text>intplace_Corridoio</text>
+        </name>
+      </place>
+      <place id="pre_Camera_Letto">
+        <name>
+          <text>pre_Camera_Letto</text>
+        </name>
+      </place>
+      <place id="intplace_Ufficio">
+        <name>
+          <text>intplace_Ufficio</text>
+        </name>
+      </place>
+      <place id="intplace_Sala_Pranzo">
+        <name>
+          <text>intplace_Sala_Pranzo</text>
+        </name>
+      </place>
+      <place id="intplace_Camera_2">
+        <name>
+          <text>intplace_Camera_2</text>
+        </name>
+      </place>
+      <place id="intplace_Camera_Letto">
+        <name>
+          <text>intplace_Camera_Letto</text>
+        </name>
+      </place>
+      <transition id="hid_88">
+        <name>
+          <text>hid_88</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="bed18413-e028-43c0-a9b4-b44ce549f7f8"/>
+      </transition>
+      <transition id="hid_102">
+        <name>
+          <text>hid_102</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="ba2643ec-0e66-482c-9281-6a01b93b1b6d"/>
+      </transition>
+      <transition id="hid_113">
+        <name>
+          <text>hid_113</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="38f3c0d1-f1dc-407e-a79c-d3f0ce017e6a"/>
+      </transition>
+      <transition id="Camera_2">
+        <name>
+          <text>Camera_2</text>
+        </name>
+      </transition>
+      <transition id="hid_85">
+        <name>
+          <text>hid_85</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="d36ff123-23c0-4e4f-b70c-547e804b8483"/>
+      </transition>
+      <transition id="hid_109">
+        <name>
+          <text>hid_109</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="b1c05fe0-9b22-4ed6-8c25-6c6d3c0359ed"/>
+      </transition>
+      <transition id="hid_32">
+        <name>
+          <text>hid_32</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="ec14f008-11b4-46a4-bc67-4730f155e604"/>
+      </transition>
+      <transition id="hid_82">
+        <name>
+          <text>hid_82</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="20129e26-0016-4620-be37-6662bed1d089"/>
+      </transition>
+      <transition id="hid_79">
+        <name>
+          <text>hid_79</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="583524c1-48b3-4066-bd69-45bf30913ff2"/>
+      </transition>
+      <transition id="hid_140">
+        <name>
+          <text>hid_140</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="27d420f7-049d-4a13-be70-9ddc6ba15d97"/>
+      </transition>
+      <transition id="hid_150">
+        <name>
+          <text>hid_150</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="1d1b7f08-3035-4358-bd2a-5f198f6870ea"/>
+      </transition>
+      <transition id="hid_122">
+        <name>
+          <text>hid_122</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="59f2e938-9932-41ce-b62f-fc6d2d86155d"/>
+      </transition>
+      <transition id="hid_137">
+        <name>
+          <text>hid_137</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="31acc103-7539-4f98-8cf4-e4845a96b2cf"/>
+      </transition>
+      <transition id="hid_11">
+        <name>
+          <text>hid_11</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="fad8f0cf-6fb6-4fbb-bd44-b0971eaa1b5f"/>
+      </transition>
+      <transition id="hid_12">
+        <name>
+          <text>hid_12</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="b8cffd1b-665c-4242-9450-dd0104430b99"/>
+      </transition>
+      <transition id="hid_119">
+        <name>
+          <text>hid_119</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="df08f906-8f92-4fdb-8b3e-1c29d0becf0b"/>
+      </transition>
+      <transition id="hid_134">
+        <name>
+          <text>hid_134</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="d6347e4d-beee-4872-b03a-f19b601dd169"/>
+      </transition>
+      <transition id="hid_144">
+        <name>
+          <text>hid_144</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="30ebce6c-d25f-4d94-9001-f283774079d6"/>
+      </transition>
+      <transition id="hid_154">
+        <name>
+          <text>hid_154</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="7b09f07d-8ff8-49bc-814e-bc80c5d15874"/>
+      </transition>
+      <transition id="hid_126">
+        <name>
+          <text>hid_126</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="2412fbb6-f9e5-4d50-99d3-8d7f417a03c5"/>
+      </transition>
+      <transition id="hid_141">
+        <name>
+          <text>hid_141</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="bcbbaa23-f24c-40a4-a46f-389eccfe0d51"/>
+      </transition>
+      <transition id="hid_93">
+        <name>
+          <text>hid_93</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="57c2d3da-637f-45d0-ba23-7da5fe34d825"/>
+      </transition>
+      <transition id="hid_123">
+        <name>
+          <text>hid_123</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="d5e1fa59-08b7-41f3-aa11-a844998d3df8"/>
+      </transition>
+      <transition id="hid_133">
+        <name>
+          <text>hid_133</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="9894aadb-189a-4109-8084-d10946fdc81d"/>
+      </transition>
+      <transition id="hid_158">
+        <name>
+          <text>hid_158</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="3ff546aa-9b0d-486a-be26-f9c466337d35"/>
+      </transition>
+      <transition id="hid_90">
+        <name>
+          <text>hid_90</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="165cc584-1eb7-4eb5-ae2d-7b7a1bca9d32"/>
+      </transition>
+      <transition id="hid_100">
+        <name>
+          <text>hid_100</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="57154ad4-d1ef-4476-8222-7c7e5f02aba1"/>
+      </transition>
+      <transition id="hid_130">
+        <name>
+          <text>hid_130</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="ba2b251e-1ee6-42a7-8f8a-bcb01bfb6955"/>
+      </transition>
+      <transition id="Sala_Pranzo">
+        <name>
+          <text>Sala_Pranzo</text>
+        </name>
+      </transition>
+      <transition id="hid_97">
+        <name>
+          <text>hid_97</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="b72b417d-1c15-4b89-9954-33e74360f85f"/>
+      </transition>
+      <transition id="hid_107">
+        <name>
+          <text>hid_107</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="d6ccd4c6-3cd0-4522-85a5-9d661aeefa4f"/>
+      </transition>
+      <transition id="hid_104">
+        <name>
+          <text>hid_104</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="bc13624f-017b-4bf5-89bc-ccf7b019547d"/>
+      </transition>
+      <transition id="hid_63">
+        <name>
+          <text>hid_63</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="7eec5a40-aa6e-46df-a61c-7c00722df07c"/>
+      </transition>
+      <transition id="hid_87">
+        <name>
+          <text>hid_87</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="1e014720-0bc8-4cdd-a3a5-47be6ec502ea"/>
+      </transition>
+      <transition id="hid_101">
+        <name>
+          <text>hid_101</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="342321d7-a5b1-47bb-992b-46fdce07e389"/>
+      </transition>
+      <transition id="hid_111">
+        <name>
+          <text>hid_111</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="1499cdb7-85c7-4f93-9292-f0b50e564988"/>
+      </transition>
+      <transition id="Corridoio">
+        <name>
+          <text>Corridoio</text>
+        </name>
+      </transition>
+      <transition id="hid_53">
+        <name>
+          <text>hid_53</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="197c3001-576b-48a4-ab89-8697bb02c90a"/>
+      </transition>
+      <transition id="hid_108">
+        <name>
+          <text>hid_108</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="1b95da32-40e6-4f75-9210-62e0ae22b072"/>
+      </transition>
+      <transition id="hid_81">
+        <name>
+          <text>hid_81</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="a7a6bb11-0570-48ad-9287-4b258bbf4b8a"/>
+      </transition>
+      <transition id="hid_152">
+        <name>
+          <text>hid_152</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="9cf3b87e-659d-4e63-9226-43c23ccb953f"/>
+      </transition>
+      <transition id="Bagno_Principale">
+        <name>
+          <text>Bagno_Principale</text>
+        </name>
+      </transition>
+      <transition id="Uscita_Principale">
+        <name>
+          <text>Uscita_Principale</text>
+        </name>
+      </transition>
+      <transition id="hid_72">
+        <name>
+          <text>hid_72</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="4566a7fa-3b88-46c3-8469-069a29132e30"/>
+      </transition>
+      <transition id="hid_112">
+        <name>
+          <text>hid_112</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="433e28ce-eb1e-4d82-be83-9342663b1963"/>
+      </transition>
+      <transition id="hid_149">
+        <name>
+          <text>hid_149</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="fa4bdecd-fdc8-4bb9-aad7-a6ee6812acc1"/>
+      </transition>
+      <transition id="hid_77">
+        <name>
+          <text>hid_77</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="0d4e8344-e754-4bf6-a9a8-0c1edf449051"/>
+      </transition>
+      <transition id="hid_121">
+        <name>
+          <text>hid_121</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="df1e0fbb-6fb4-471a-92df-2a4956d224a8"/>
+      </transition>
+      <transition id="hid_136">
+        <name>
+          <text>hid_136</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="e3b1b974-1d4e-431a-9038-31c6190383fb"/>
+      </transition>
+      <transition id="hid_146">
+        <name>
+          <text>hid_146</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="c706c6c4-668e-46a1-a835-920e225cc7a9"/>
+      </transition>
+      <transition id="hid_156">
+        <name>
+          <text>hid_156</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="84857554-eb3f-4ef1-b858-b3f3d236271c"/>
+      </transition>
+      <transition id="hid_118">
+        <name>
+          <text>hid_118</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="74dd46be-da8b-4982-b8f2-7edde4896a93"/>
+      </transition>
+      <transition id="hid_128">
+        <name>
+          <text>hid_128</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="a6d083dd-79bd-4e83-a98e-1daada60d62f"/>
+      </transition>
+      <transition id="hid_143">
+        <name>
+          <text>hid_143</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="e3a2557a-80ac-4d67-b24a-2a1149978f87"/>
+      </transition>
+      <transition id="hid_153">
+        <name>
+          <text>hid_153</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="f7628b5d-cf40-4ac3-896b-cf0b7cb534d0"/>
+      </transition>
+      <transition id="Garage">
+        <name>
+          <text>Garage</text>
+        </name>
+      </transition>
+      <transition id="hid_115">
+        <name>
+          <text>hid_115</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="eb2148bb-0e33-494a-a0ab-ea6946fcd51b"/>
+      </transition>
+      <transition id="hid_125">
+        <name>
+          <text>hid_125</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="1bb9f0e3-37ec-401c-9033-517c5903dd39"/>
+      </transition>
+      <transition id="hid_92">
+        <name>
+          <text>hid_92</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="9781533d-9805-43e0-9a0d-05ba07ebef2f"/>
+      </transition>
+      <transition id="hid_132">
+        <name>
+          <text>hid_132</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="c6380fec-b147-463f-8082-4d204e15184a"/>
+      </transition>
+      <transition id="hid_157">
+        <name>
+          <text>hid_157</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="642eb52a-ad48-4e73-8d19-b2dd8209eb4a"/>
+      </transition>
+      <transition id="hid_18">
+        <name>
+          <text>hid_18</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="1337b444-f6d6-4163-8aaf-1657b6274f98"/>
+      </transition>
+      <transition id="hid_89">
+        <name>
+          <text>hid_89</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="29c8e5eb-430d-44fe-8b6c-8813fd47316f"/>
+      </transition>
+      <transition id="hid_99">
+        <name>
+          <text>hid_99</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="ce2d94d0-84be-4207-a662-bafd26194d0e"/>
+      </transition>
+      <transition id="hid_129">
+        <name>
+          <text>hid_129</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="b57bff36-998a-4b9e-ae03-2108c737c95e"/>
+      </transition>
+      <transition id="hid_47">
+        <name>
+          <text>hid_47</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="3b979712-c4bd-4133-9cff-0dbceee3a878"/>
+      </transition>
+      <transition id="hid_96">
+        <name>
+          <text>hid_96</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="0081709b-6bd5-4d0e-90ad-7f473938b1b5"/>
+      </transition>
+      <transition id="hid_106">
+        <name>
+          <text>hid_106</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="f925f63a-4da5-41c8-a523-326f843db5a3"/>
+      </transition>
+      <transition id="hid_37">
+        <name>
+          <text>hid_37</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="98b5aa2b-1940-463a-abd4-c0681dbc90ef"/>
+      </transition>
+      <transition id="Soggiorno">
+        <name>
+          <text>Soggiorno</text>
+        </name>
+      </transition>
+      <transition id="Ufficio">
+        <name>
+          <text>Ufficio</text>
+        </name>
+      </transition>
+      <transition id="hid_103">
+        <name>
+          <text>hid_103</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="0125e567-3f16-4129-b15f-f65a59d9d528"/>
+      </transition>
+      <transition id="hid_86">
+        <name>
+          <text>hid_86</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="b5b365b5-4169-4b86-a610-4429f4d2078d"/>
+      </transition>
+      <transition id="hid_110">
+        <name>
+          <text>hid_110</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="43f89dff-ff9a-4818-9f4b-dae8e225a273"/>
+      </transition>
+      <transition id="hid_83">
+        <name>
+          <text>hid_83</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="0e7c76e1-46a6-4fb5-866e-3683602d7a35"/>
+      </transition>
+      <transition id="Cucina_Prep">
+        <name>
+          <text>Cucina_Prep</text>
+        </name>
+      </transition>
+      <transition id="hid_80">
+        <name>
+          <text>hid_80</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="d5d477e5-5abf-4de2-b759-b5cad829e7f7"/>
+      </transition>
+      <transition id="hid_114">
+        <name>
+          <text>hid_114</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="541649be-74f7-48fe-b531-cd6514760eb0"/>
+      </transition>
+      <transition id="Camera_Letto">
+        <name>
+          <text>Camera_Letto</text>
+        </name>
+      </transition>
+      <transition id="hid_138">
+        <name>
+          <text>hid_138</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="86947aa8-8cc4-4734-bacf-cc47649fe3d8"/>
+      </transition>
+      <transition id="hid_148">
+        <name>
+          <text>hid_148</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="42654643-1475-4a9d-8361-e889f9f585bf"/>
+      </transition>
+      <transition id="hid_120">
+        <name>
+          <text>hid_120</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="c7733686-9dd4-4b66-a160-86332dddcb9a"/>
+      </transition>
+      <transition id="hid_145">
+        <name>
+          <text>hid_145</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="b4634a7e-0dac-4dae-b203-1b3cf7805ee6"/>
+      </transition>
+      <transition id="hid_155">
+        <name>
+          <text>hid_155</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="e8d2b384-4c57-43e3-96c7-f517f73690f6"/>
+      </transition>
+      <transition id="hid_24">
+        <name>
+          <text>hid_24</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="5b7a427c-5816-4d27-9753-fb92549817e6"/>
+      </transition>
+      <transition id="hid_117">
+        <name>
+          <text>hid_117</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="b34d5e28-1800-4684-8384-5d1cf40c354a"/>
+      </transition>
+      <transition id="hid_127">
+        <name>
+          <text>hid_127</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="6a6c05de-6388-447e-af77-76bec4b0ddd9"/>
+      </transition>
+      <transition id="hid_142">
+        <name>
+          <text>hid_142</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="57a3e2c7-58ba-4288-82da-213787d9294b"/>
+      </transition>
+      <transition id="hid_10">
+        <name>
+          <text>hid_10</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="ecb1c6fe-da8e-4d26-8a39-33d224f9a96c"/>
+      </transition>
+      <transition id="hid_94">
+        <name>
+          <text>hid_94</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="41eb6d08-9936-4ec4-bf75-bd9a49c9b5fb"/>
+      </transition>
+      <transition id="hid_124">
+        <name>
+          <text>hid_124</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="a72dd5e8-97e9-4d1d-8378-fab5a3ac16a4"/>
+      </transition>
+      <transition id="Bagno_2">
+        <name>
+          <text>Bagno_2</text>
+        </name>
+      </transition>
+      <transition id="Uscita_Retro">
+        <name>
+          <text>Uscita_Retro</text>
+        </name>
+      </transition>
+      <transition id="hid_91">
+        <name>
+          <text>hid_91</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="94f0bfde-add7-4a14-841f-7197a410a169"/>
+      </transition>
+      <transition id="hid_131">
+        <name>
+          <text>hid_131</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="323008f9-f691-4881-8d0c-1fcd1c82630e"/>
+      </transition>
+      <transition id="hid_98">
+        <name>
+          <text>hid_98</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="2eb39495-0106-406b-82d7-fa247c9a2b8c"/>
+      </transition>
+      <transition id="hid_95">
+        <name>
+          <text>hid_95</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="3f094b4c-ac99-41a6-b432-2d90db74b515"/>
+      </transition>
+      <transition id="hid_105">
+        <name>
+          <text>hid_105</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="2bfeb769-488e-4bdd-88e6-58276ba34b08"/>
+      </transition>
+      <arc id="136622915055616" source="hid_12" target="pre_Garage"/>
+      <arc id="136622915334144" source="Sala_Pranzo" target="intplace_Sala_Pranzo"/>
+      <arc id="136622761963520" source="hid_106" target="pre_Ufficio"/>
+      <arc id="136622761955344" source="intplace_Ufficio" target="hid_145"/>
+      <arc id="136622915332128" source="intplace_Cucina_Prep" target="hid_117"/>
+      <arc id="136622761961504" source="hid_89" target="pre_Camera_2"/>
+      <arc id="136622915323952" source="intplace_Bagno_2" target="hid_94"/>
+      <arc id="136622761902160" source="hid_91" target="pre_Cucina_Prep"/>
+      <arc id="136622761965648" source="hid_108" target="pre_Bagno_Principale"/>
+      <arc id="136622915328096" source="intplace_Camera_2" target="hid_105"/>
+      <arc id="136622761963632" source="hid_105" target="pre_Soggiorno"/>
+      <arc id="136622761961616" source="hid_96" target="pre_Corridoio"/>
+      <arc id="136622915324064" source="hid_94" target="sink0"/>
+      <arc id="136622761953440" source="intplace_Soggiorno" target="hid_140"/>
+      <arc id="136622761959600" source="Uscita_Retro" target="intplace_Uscita_Retro"/>
+      <arc id="136622761965760" source="hid_117" target="pre_Sala_Pranzo"/>
+      <arc id="136622761902272" source="hid_157" target="pre_Cucina_Prep"/>
+      <arc id="136622915322048" source="Bagno_2" target="intplace_Bagno_2"/>
+      <arc id="136622915336384" source="Soggiorno" target="intplace_Soggiorno"/>
+      <arc id="136622761951424" source="intplace_Soggiorno" target="hid_134"/>
+      <arc id="136622761963744" source="hid_141" target="pre_Bagno_2"/>
+      <arc id="136622915334368" source="intplace_Sala_Pranzo" target="hid_123"/>
+      <arc id="136622915326192" source="intplace_Bagno_Principale" target="hid_100"/>
+      <arc id="136622761961728" source="hid_119" target="pre_Ufficio"/>
+      <arc id="136622761953552" source="hid_140" target="sink0"/>
+      <arc id="136622915330336" source="intplace_Camera_Letto" target="hid_111"/>
+      <arc id="136622915404080" source="source0" target="hid_53"/>
+      <arc id="136622915057968" source="intplace_Cucina_Prep" target="hid_113"/>
+      <arc id="136622761965872" source="hid_92" target="pre_Soggiorno"/>
+      <arc id="136622761902384" source="intplace_Ufficio" target="hid_11"/>
+      <arc id="136622761957696" source="intplace_Ufficio" target="hid_152"/>
+      <arc id="136622761963856" source="hid_113" target="pre_Bagno_Principale"/>
+      <arc id="136622915326304" source="hid_100" target="sink0"/>
+      <arc id="136622761955680" source="intplace_Ufficio" target="hid_146"/>
+      <arc id="136622915332464" source="intplace_Cucina_Prep" target="hid_118"/>
+      <arc id="136622761961840" source="hid_86" target="pre_Soggiorno"/>
+      <arc id="136622915324288" source="Bagno_Principale" target="intplace_Bagno_Principale"/>
+      <arc id="136622915330448" source="hid_111" target="sink0"/>
+      <arc id="136622761959824" source="intplace_Uscita_Retro" target="hid_157"/>
+      <arc id="136622915469728" source="source0" target="hid_18"/>
+      <arc id="136622915404192" source="hid_53" target="pre_Sala_Pranzo"/>
+      <arc id="136622915322272" source="intplace_Bagno_2" target="hid_89"/>
+      <arc id="136622915336608" source="intplace_Soggiorno" target="hid_129"/>
+      <arc id="136622761965984" source="hid_155" target="pre_Soggiorno"/>
+      <arc id="136622761902496" source="intplace_Cucina_Prep" target="hid_11"/>
+      <arc id="136622915328432" source="intplace_Camera_2" target="hid_106"/>
+      <arc id="136622761957808" source="hid_152" target="sink0"/>
+      <arc id="136622915416512" source="Corridoio" target="intplace_Corridoio"/>
+      <arc id="136622761963968" source="hid_148" target="pre_Sala_Pranzo"/>
+      <arc id="136622761961952" source="hid_142" target="pre_Bagno_Principale"/>
+      <arc id="136622761953776" source="Ufficio" target="intplace_Ufficio"/>
+      <arc id="136622915469840" source="hid_18" target="pre_Bagno_2"/>
+      <arc id="136622761902608" source="intplace_Corridoio" target="hid_11"/>
+      <arc id="136622761966096" source="hid_103" target="pre_Cucina_Prep"/>
+      <arc id="136622915334704" source="intplace_Sala_Pranzo" target="hid_124"/>
+      <arc id="136622761964080" source="hid_153" target="pre_Corridoio"/>
+      <arc id="136622915326528" source="Camera_2" target="intplace_Camera_2"/>
+      <arc id="136622761962064" source="hid_146" target="pre_Cucina_Prep"/>
+      <arc id="136622915324512" source="intplace_Bagno_Principale" target="hid_95"/>
+      <arc id="136622915330672" source="Cucina_Prep" target="intplace_Cucina_Prep"/>
+      <arc id="136622915469952" source="pre_Bagno_Principale" target="Bagno_Principale"/>
+      <arc id="136622761902720" source="intplace_Soggiorno" target="hid_77"/>
+      <arc id="136622915404416" source="pre_Soggiorno" target="Soggiorno"/>
+      <arc id="136622915418752" source="intplace_Corridoio" target="hid_85"/>
+      <arc id="136622761966208" source="hid_120" target="pre_Uscita_Principale"/>
+      <arc id="136622915476112" source="source0" target="hid_32"/>
+      <arc id="136622761958032" source="Uscita_Principale" target="intplace_Uscita_Principale"/>
+      <arc id="136622915416736" source="intplace_Corridoio" target="hid_79"/>
+      <arc id="136622761964192" source="hid_125" target="pre_Cucina_Prep"/>
+      <arc id="136622915332800" source="intplace_Cucina_Prep" target="hid_119"/>
+      <arc id="136622761962176" source="hid_82" target="pre_Camera_Letto"/>
+      <arc id="136622761954000" source="intplace_Ufficio" target="hid_141"/>
+      <arc id="136622761960160" source="intplace_Uscita_Retro" target="hid_158"/>
+      <arc id="136622914958064" source="pre_Garage" target="Garage"/>
+      <arc id="136622761902832" source="intplace_Ufficio" target="hid_77"/>
+      <arc id="136622915322608" source="intplace_Bagno_2" target="hid_90"/>
+      <arc id="136622915336944" source="intplace_Soggiorno" target="hid_130"/>
+      <arc id="136622761966320" source="Garage" target="pre_Camera_2"/>
+      <arc id="136622915476224" source="hid_32" target="pre_Camera_2"/>
+      <arc id="136622915328768" source="intplace_Camera_2" target="hid_107"/>
+      <arc id="136622761964304" source="hid_150" target="pre_Uscita_Principale"/>
+      <arc id="136622915408672" source="source0" target="hid_63"/>
+      <arc id="136622915326752" source="intplace_Camera_2" target="hid_101"/>
+      <arc id="136622761962288" source="hid_115" target="pre_Corridoio"/>
+      <arc id="136622915412816" source="source0" target="hid_72"/>
+      <arc id="136622915330896" source="intplace_Cucina_Prep" target="hid_112"/>
+      <arc id="136622761902944" source="intplace_Soggiorno" target="hid_11"/>
+      <arc id="136622761966432" source="hid_156" target="pre_Ufficio"/>
+      <arc id="136622761952096" source="intplace_Soggiorno" target="hid_136"/>
+      <arc id="136622915328880" source="hid_107" target="sink0"/>
+      <arc id="136622761958256" source="intplace_Uscita_Principale" target="hid_153"/>
+      <arc id="136622915335040" source="intplace_Sala_Pranzo" target="hid_125"/>
+      <arc id="136622761964416" source="hid_99" target="pre_Ufficio"/>
+      <arc id="136622915408784" source="hid_63" target="pre_Soggiorno"/>
+      <arc id="136622761962400" source="hid_79" target="pre_Bagno_2"/>
+      <arc id="136622915324848" source="intplace_Bagno_Principale" target="hid_96"/>
+      <arc id="136622915478464" source="source0" target="hid_37"/>
+      <arc id="136622915412928" source="hid_72" target="pre_Ufficio"/>
+      <arc id="136622761960384" source="hid_144" target="pre_Camera_Letto"/>
+      <arc id="136622915214288" source="source0" target="hid_10"/>
+      <arc id="136622761966544" source="hid_85" target="pre_Sala_Pranzo"/>
+      <arc id="136622915419088" source="intplace_Corridoio" target="hid_86"/>
+      <arc id="136622915476448" source="pre_Camera_Letto" target="Camera_Letto"/>
+      <arc id="136622915417072" source="intplace_Corridoio" target="hid_80"/>
+      <arc id="136622761964528" source="hid_131" target="pre_Camera_2"/>
+      <arc id="136622761956352" source="intplace_Ufficio" target="hid_148"/>
+      <arc id="136622915333136" source="intplace_Cucina_Prep" target="hid_120"/>
+      <arc id="136622761962512" source="hid_87" target="pre_Ufficio"/>
+      <arc id="136622915472416" source="source0" target="hid_24"/>
+      <arc id="136622761954336" source="intplace_Ufficio" target="hid_142"/>
+      <arc id="136622915478576" source="hid_37" target="pre_Camera_Letto"/>
+      <arc id="136622915331120" source="intplace_Cucina_Prep" target="hid_114"/>
+      <arc id="136622761960496" source="hid_121" target="pre_Uscita_Retro"/>
+      <arc id="136622761966656" source="hid_149" target="pre_Soggiorno"/>
+      <arc id="136622915337280" source="intplace_Soggiorno" target="hid_131"/>
+      <arc id="136622915322944" source="intplace_Bagno_2" target="hid_91"/>
+      <arc id="136622915329104" source="Camera_Letto" target="intplace_Camera_Letto"/>
+      <arc id="136622915056736" source="source0" target="hid_12"/>
+      <arc id="136622761964640" source="hid_80" target="pre_Bagno_Principale"/>
+      <arc id="136622915409008" source="pre_Ufficio" target="Ufficio"/>
+      <arc id="136622915327088" source="intplace_Camera_2" target="hid_102"/>
+      <arc id="136622915415168" source="pre_Uscita_Retro" target="Uscita_Retro"/>
+      <arc id="136622761962624" source="hid_130" target="pre_Bagno_Principale"/>
+      <arc id="136622915472528" source="hid_24" target="pre_Bagno_Principale"/>
+      <arc id="136622915413152" source="pre_Uscita_Principale" target="Uscita_Principale"/>
+      <arc id="136622761960608" source="hid_81" target="pre_Camera_2"/>
+      <arc id="136622916648112" source="pre_Corridoio" target="Corridoio"/>
+      <arc id="136622761966768" source="hid_97" target="pre_Cucina_Prep"/>
+      <arc id="136622761952432" source="intplace_Soggiorno" target="hid_137"/>
+      <arc id="136622761958592" source="intplace_Uscita_Principale" target="hid_154"/>
+      <arc id="136622761964752" source="hid_136" target="pre_Sala_Pranzo"/>
+      <arc id="136622915220688" source="hid_10" target="pre_Corridoio"/>
+      <arc id="136622915335376" source="intplace_Sala_Pranzo" target="hid_126"/>
+      <arc id="136622761962736" source="hid_110" target="pre_Soggiorno"/>
+      <arc id="136622915325184" source="intplace_Bagno_Principale" target="hid_97"/>
+      <arc id="136622915478800" source="pre_Cucina_Prep" target="Cucina_Prep"/>
+      <arc id="136622761960720" source="hid_127" target="pre_Ufficio"/>
+      <arc id="136622915419424" source="intplace_Corridoio" target="hid_87"/>
+      <arc id="136622761966880" source="hid_114" target="pre_Camera_2"/>
+      <arc id="136622915329328" source="intplace_Camera_Letto" target="hid_108"/>
+      <arc id="136622915417408" source="intplace_Corridoio" target="hid_81"/>
+      <arc id="136622761964864" source="hid_98" target="pre_Soggiorno"/>
+      <arc id="136622761956688" source="intplace_Ufficio" target="hid_149"/>
+      <arc id="136622915415392" source="hid_77" target="pre_Uscita_Retro"/>
+      <arc id="136622915333472" source="intplace_Cucina_Prep" target="hid_121"/>
+      <arc id="136622761962848" source="hid_90" target="pre_Corridoio"/>
+      <arc id="136622915472752" source="pre_Camera_2" target="Camera_2"/>
+      <arc id="136622761954672" source="intplace_Ufficio" target="hid_143"/>
+      <arc id="136622915331456" source="intplace_Cucina_Prep" target="hid_115"/>
+      <arc id="136622761960832" source="hid_124" target="pre_Corridoio"/>
+      <arc id="136622915059088" source="pre_Bagno_2" target="Bagno_2"/>
+      <arc id="136622761966992" source="hid_109" target="pre_Corridoio"/>
+      <arc id="136622915323280" source="intplace_Bagno_2" target="hid_92"/>
+      <arc id="136622915337616" source="intplace_Soggiorno" target="hid_132"/>
+      <arc id="136622915483056" source="source0" target="hid_47"/>
+      <arc id="136622761964976" source="hid_83" target="pre_Cucina_Prep"/>
+      <arc id="136622915327424" source="intplace_Camera_2" target="hid_103"/>
+      <arc id="136622761962960" source="hid_134" target="pre_Cucina_Prep"/>
+      <arc id="136622761960944" source="hid_118" target="pre_Soggiorno"/>
+      <arc id="136622761967104" source="hid_137" target="pre_Ufficio"/>
+      <arc id="136622761952768" source="intplace_Soggiorno" target="hid_138"/>
+      <arc id="136622761958928" source="intplace_Uscita_Principale" target="hid_155"/>
+      <arc id="136622915483168" source="hid_47" target="pre_Cucina_Prep"/>
+      <arc id="136622915335712" source="intplace_Sala_Pranzo" target="hid_127"/>
+      <arc id="136622761965088" source="hid_102" target="pre_Corridoio"/>
+      <arc id="136622761963072" source="hid_95" target="pre_Camera_Letto"/>
+      <arc id="136622915325520" source="intplace_Bagno_Principale" target="hid_98"/>
+      <arc id="136622761961056" source="hid_145" target="pre_Corridoio"/>
+      <arc id="136622761967216" source="hid_104" target="pre_Sala_Pranzo"/>
+      <arc id="136622915419760" source="intplace_Corridoio" target="hid_88"/>
+      <arc id="136622915329664" source="intplace_Camera_Letto" target="hid_109"/>
+      <arc id="136622915417744" source="intplace_Corridoio" target="hid_82"/>
+      <arc id="136622761965200" source="hid_138" target="pre_Uscita_Principale"/>
+      <arc id="136622761957024" source="intplace_Ufficio" target="hid_150"/>
+      <arc id="136622761963184" source="hid_158" target="pre_Uscita_Principale"/>
+      <arc id="136622915333808" source="intplace_Cucina_Prep" target="hid_122"/>
+      <arc id="136622761955008" source="intplace_Ufficio" target="hid_144"/>
+      <arc id="136622761961168" source="hid_129" target="pre_Bagno_2"/>
+      <arc id="136622915419872" source="hid_88" target="sink0"/>
+      <arc id="136622915323616" source="intplace_Bagno_2" target="hid_93"/>
+      <arc id="136622915337952" source="intplace_Soggiorno" target="hid_133"/>
+      <arc id="136622761967328" source="hid_126" target="pre_Soggiorno"/>
+      <arc id="136622915483392" source="pre_Sala_Pranzo" target="Sala_Pranzo"/>
+      <arc id="136622761965312" source="hid_123" target="pre_Camera_2"/>
+      <arc id="136622915327760" source="intplace_Camera_2" target="hid_104"/>
+      <arc id="136622761963296" source="hid_133" target="pre_Corridoio"/>
+      <arc id="136622915333920" source="hid_122" target="sink0"/>
+      <arc id="136622761961280" source="hid_154" target="pre_Cucina_Prep"/>
+      <arc id="136622915753808" source="hid_11" target="pre_Garage"/>
+      <arc id="136622761967440" source="hid_112" target="pre_Bagno_2"/>
+      <arc id="136622761959264" source="intplace_Uscita_Principale" target="hid_156"/>
+      <arc id="136622915336048" source="intplace_Sala_Pranzo" target="hid_128"/>
+      <arc id="136622761965424" source="hid_93" target="pre_Ufficio"/>
+      <arc id="136622761963408" source="hid_143" target="pre_Camera_2"/>
+      <arc id="136622915325856" source="intplace_Bagno_Principale" target="hid_99"/>
+      <arc id="136622761961392" source="hid_132" target="pre_Camera_Letto"/>
+      <arc id="136622915330000" source="intplace_Camera_Letto" target="hid_110"/>
+      <arc id="136622915418080" source="intplace_Corridoio" target="hid_83"/>
+      <arc id="136622915336160" source="hid_128" target="sink0"/>
+      <arc id="136622761965536" source="hid_101" target="pre_Bagno_2"/>
+    </page>
+    <finalmarkings>
+      <marking>
+        <place idref="sink0">
+          <text>1</text>
+        </place>
+      </marking>
+    </finalmarkings>
+  </net>
+</pnml>

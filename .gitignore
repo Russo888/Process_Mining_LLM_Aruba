@@ -19,6 +19,20 @@ event_log.csv
 *.log
 test_imports.py
 
+# File di ambiente e chiavi
+.env
+.env.*
+*.env
+
 # Opzionale: decommenta se non vuoi caricare il dataset raw e i file pickle (i modelli)
 # data/aruba.20111101-20111128_20260218.180945.txt
 # data/models.pkl
+
+# Copia locale preesistente con repository e ambiente propri
+/Process_Mining_LLM_Aruba/
+
+# Anteprime temporanee dei documenti; conserva il verbale della verifica
+/audit/gemini_revision_render/*
+!/audit/gemini_revision_render/quality_check.json
+/audit/historical_layout_pre_gemini/*
+!/audit/historical_layout_pre_gemini/README.md

@@ -1,6 +1,5 @@
 import pandas as pd
 import os
-import sys
 import pm4py
 
 # ==========================================
@@ -73,6 +72,8 @@ def load_and_transform_dataset(file_path):
 
     df = pd.DataFrame(data, columns=["date", "time", "sensor_id", "value"])
 
+    # Manteniamo entrambi gli stati ON/OFF e OPEN/CLOSE per compatibilità
+    # con il dataset derivato; le etichette identificano zone, non azioni validate.
     # Filtro Sensori (Solo Motion e Door, NO Temperatura)
     print("   Filtro Sensori (Eliminazione Temperatura)...")
     df = df[df['sensor_id'].str.startswith(('M', 'D'))].copy()
@@ -80,7 +81,7 @@ def load_and_transform_dataset(file_path):
     # Timestamp
     df['temp_ts'] = df['date'] + ' ' + df['time']
     df[TIMESTAMP_KEY] = pd.to_datetime(df['temp_ts'], format="%Y-%m-%d %H:%M:%S.%f", errors='coerce')
-    df = df.dropna(subset=[TIMESTAMP_KEY]).sort_values(TIMESTAMP_KEY)
+    df = df.dropna(subset=[TIMESTAMP_KEY]).sort_values(TIMESTAMP_KEY, kind="stable")
 
     # Mappatura Attività
     print("   Conversione Sensori -> Attività Umane...")
@@ -134,7 +135,9 @@ def extract_process_structure(df):
         structure_str += "\n--- VARIANTI TOP 5 ---\n"
         for path, val in sorted_variants[:5]:
             count = get_count(val)
-            path_str = " -> ".join(path)
+            path_str = " -> ".join(path[:20])
+            if len(path) > 20:
+                path_str += f" -> ... ({len(path)} eventi nella traccia completa)"
             structure_str += f"- ({count} casi): {path_str}\n"
 
         return structure_str

@@ -1,0 +1,42 @@
+{
+  "status": "ok",
+  "id": "inductive_010",
+  "label": "Inductive noise=0.10",
+  "metrics": {
+    "fitness": 0.9998583842422839,
+    "precision": 0.08398199566503706
+  },
+  "f1": 0.15494920478653268,
+  "fit_traces_percent": 95.0,
+  "shuffled_fitness": 0.9998583842422839,
+  "shuffled_fit_traces_percent": 95.0,
+  "order_fitness_gap": 0.0,
+  "places": 36,
+  "transitions": 41,
+  "arcs": 104,
+  "silent_transitions": 29,
+  "missing_log_labels": [],
+  "evaluated_cases": [
+    "2012-01-07_Sera",
+    "2012-01-08_Notte",
+    "2012-01-08_Pomeriggio",
+    "2012-01-11_Mattina",
+    "2012-01-16_Sera",
+    "2012-02-03_Mattina",
+    "2012-02-03_Sera",
+    "2012-02-06_Pomeriggio",
+    "2012-02-11_Notte",
+    "2012-02-11_Mattina",
+    "2012-02-20_Notte",
+    "2012-02-24_Mattina",
+    "2012-02-27_Notte",
+    "2012-02-28_Notte",
+    "2012-02-29_Notte",
+    "2012-03-01_Mattina",
+    "2012-03-03_Pomeriggio",
+    "2012-03-07_Mattina",
+    "2012-03-08_Pomeriggio",
+    "2012-03-17_Sera"
+  ],
+  "seconds": 1566.4825427619999
+}

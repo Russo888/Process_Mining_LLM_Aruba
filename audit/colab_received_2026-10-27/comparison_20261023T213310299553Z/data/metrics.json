@@ -1,0 +1,30 @@
+{
+  "Inductive noise=0.20 (riferimento)": {
+    "fitness": 0.9998583842422839,
+    "precision": 0.08398199566503706
+  },
+  "Inductive noise=0.00": {
+    "fitness": 1.0,
+    "precision": 0.08398199566503706
+  },
+  "Inductive noise=0.10": {
+    "fitness": 0.9998583842422839,
+    "precision": 0.08398199566503706
+  },
+  "Heuristic dependency=0.30": {
+    "fitness": 0.9577958987809936,
+    "precision": 0.17400030878493133
+  },
+  "Heuristic dependency=0.50": {
+    "fitness": 0.9577958987809936,
+    "precision": 0.17400030878493133
+  },
+  "Heuristic dependency=0.10": {
+    "fitness": 0.9928559441900606,
+    "precision": 0.1430153164790552
+  },
+  "Alpha Miner": {
+    "fitness": 0.003295406934063938,
+    "precision": 0.6015037593984962
+  }
+}

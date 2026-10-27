@@ -1,0 +1,35 @@
+{
+  "DOCUMENTAZIONE_PROGETTO": {
+    "sha256": "714df17acd4e72af08a1932d1264e712762359c39b1d0cae46cb08598f0795f8",
+    "pages": 18,
+    "comparison_section_pages": [],
+    "gemini_section_pages": [
+      14
+    ],
+    "floating_images": false,
+    "word_crop": false
+  },
+  "PROJECT_DOCUMENTATION_EN": {
+    "sha256": "205b05092ab6f8730c91d467d12e87585ae292813ff9851fb300f675b6c58b36",
+    "pages": 22,
+    "comparison_section_pages": [
+      16
+    ],
+    "gemini_section_pages": [
+      17
+    ],
+    "floating_images": false,
+    "word_crop": false
+  },
+  "review": {
+    "all_pages_visually_reviewed": true,
+    "italian_pages": 18,
+    "english_pages": 22,
+    "english_S5_corrected_page": 16,
+    "automated_tests_passed": 30,
+    "dependency_check": "No broken requirements found",
+    "live_Gemini_request_tested": false,
+    "renderer": "Microsoft Word PDF export; bundled Poppler at 110 dpi",
+    "historical_layouts": "audit/historical_layout_pre_gemini; superseded, not deliverables"
+  }
+}

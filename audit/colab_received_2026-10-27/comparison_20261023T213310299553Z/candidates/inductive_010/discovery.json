@@ -1,0 +1,11 @@
+{
+  "stage": "discovery_completed",
+  "config": {
+    "id": "inductive_010",
+    "label": "Inductive noise=0.10",
+    "miner": "Inductive Miner",
+    "parameters": {
+      "noise_threshold": 0.1
+    }
+  }
+}

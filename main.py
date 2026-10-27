@@ -5,20 +5,18 @@ from preprocessing import load_and_transform_dataset
 from discovery import discover_models
 from evaluation import evaluate_models_safe
 
-# Configurazione Paths
-DATASET_PATH = "data/aruba.20111101-20111128_20260218.180945.txt"
-OUTPUT_CSV = "data/dataset_aruba_attivita.csv"
-OUTPUT_MODELS = "data/models.pkl"
-OUTPUT_METRICS = "data/metrics.json"
+from project_paths import (DATA_DIR, DATASET_PATH, OUTPUT_CSV, OUTPUT_MODELS,
+                           OUTPUT_METRICS, EVALUATION_METADATA)
 
 def main():
     print("=== Process Mining Pipeline ===")
     
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
     # 1. ETL
     print(f"\n[1/4] Preprocessing dataset da: {DATASET_PATH}")
     if not os.path.exists(DATASET_PATH):
         print(f"ERRORE: Dataset non trovato in {DATASET_PATH}")
-        return
+        raise FileNotFoundError(DATASET_PATH)
 
     df = load_and_transform_dataset(DATASET_PATH)
     
@@ -33,7 +31,6 @@ def main():
     # 3. Export Modelli
     print("\n[3/4] Salvataggio modelli...")
     # Filtriamo eventuali errori prima di salvare
-    valid_models = {k: v for k, v in models.items() if not (isinstance(v, dict) and "error" in v)}
     
     with open(OUTPUT_MODELS, "wb") as f:
         pickle.dump(models, f) # Salviamo anche gli errori per mostrarli nella dashboard
@@ -41,7 +38,7 @@ def main():
 
     # 4. Valutazione
     print("\n[4/4] Valutazione modelli...")
-    scores = evaluate_models_safe(df, models)
+    scores = evaluate_models_safe(df, models, metadata_path=EVALUATION_METADATA)
     
     with open(OUTPUT_METRICS, "w") as f:
         json.dump(scores, f, indent=4)

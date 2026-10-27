@@ -1,0 +1,13 @@
+{
+  "full_csv": "/content/aruba_runs/20261023T213130827760Z/comparison_20261023T213310299553Z/data/dataset_aruba_attivita.csv",
+  "evaluation_csv": "/content/aruba_runs/20261023T213130827760Z/comparison_20261023T213310299553Z/evaluation_log.csv",
+  "directory": "/content/aruba_runs/20261023T213130827760Z/comparison_20261023T213310299553Z/candidates/alpha",
+  "config": {
+    "id": "alpha",
+    "label": "Alpha Miner",
+    "miner": "Alpha Miner",
+    "parameters": {}
+  },
+  "seed": 42,
+  "checkpoint_dir": "/content/drive/MyDrive/ArubaColab/results/20261023T213130827760Z/comparison_20261023T213310299553Z/candidates/alpha"
+}

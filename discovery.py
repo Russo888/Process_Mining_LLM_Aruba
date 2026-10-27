@@ -1,9 +1,4 @@
 import pm4py
-from pm4py.algo.discovery.alpha import algorithm as alpha_miner
-from pm4py.algo.discovery.heuristics import algorithm as heuristic_miner
-from pm4py.algo.discovery.inductive import algorithm as inductive_miner
-from pm4py.objects.conversion.process_tree import converter as pt_converter
-
 # Costanti PM4Py (devono corrispondere a quelle usate in preprocessing)
 CASE_ID_KEY = "case:concept:name"
 ACTIVITY_KEY = "concept:name"

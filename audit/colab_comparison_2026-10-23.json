@@ -1,0 +1,138 @@
+{
+  "events": 329885,
+  "cases": 322,
+  "zones": 12,
+  "start": "2012-01-01 08:00:09.069663",
+  "end": "2012-03-31 06:44:37.402614",
+  "calendar_days_with_events": 82,
+  "csv_sorted": true,
+  "nulls": {
+    "case:concept:name": 0,
+    "concept:name": 0,
+    "time:timestamp": 0
+  },
+  "metadata_dataset_hash_matches": true,
+  "metadata_metrics_hash_matches": true,
+  "metadata_total_cases_matches": true,
+  "all_evaluated_cases_exist": true,
+  "evaluated_cases": 20,
+  "evaluated_events": 21069,
+  "metadata_evaluated_events_matches": true,
+  "metrics_fitness_matches_replay": true,
+  "local_pm4py_version": "2.7.23.11",
+  "colab_pm4py_version": "2.7.23.11",
+  "old": {
+    "fitness": 0.9978118074392874,
+    "precision": 0.1548791832645564,
+    "f1": 0.268138259141878,
+    "evaluation_cases": 50,
+    "events": 65783,
+    "cases": 109
+  },
+  "new": {
+    "fitness": 0.9998583842422839,
+    "precision": 0.08398199566503706,
+    "f1": 0.15494920478653268,
+    "evaluation_cases": 20
+  },
+  "new_replay": {
+    "perc_fit_traces": 95.0,
+    "average_trace_fitness": 0.9976581330206502,
+    "log_fitness": 0.9998583842422839,
+    "percentage_of_fitting_traces": 95.0
+  },
+  "new_shuffled_replay": {
+    "perc_fit_traces": 95.0,
+    "average_trace_fitness": 0.9976581330206502,
+    "log_fitness": 0.9998583842422839,
+    "percentage_of_fitting_traces": 95.0
+  },
+  "trace_lengths": {
+    "count": 322.0,
+    "mean": 1024.4875776397516,
+    "std": 772.0853512176166,
+    "min": 15.0,
+    "25%": 459.5,
+    "50%": 884.0,
+    "75%": 1462.75,
+    "max": 4759.0
+  },
+  "unique_variants": 320,
+  "events_by_zone": {
+    "Ufficio": 84837,
+    "Soggiorno": 54109,
+    "Cucina_Prep": 43638,
+    "Sala_Pranzo": 39124,
+    "Bagno_Principale": 28682,
+    "Corridoio": 23092,
+    "Camera_2": 21220,
+    "Camera_Letto": 17129,
+    "Bagno_2": 14772,
+    "Garage": 2951,
+    "Uscita_Principale": 190,
+    "Uscita_Retro": 141
+  },
+  "model": {
+    "places": 36,
+    "transitions": 41,
+    "silent": 29,
+    "arcs": 104,
+    "labels": [
+      "Bagno_2",
+      "Bagno_Principale",
+      "Camera_2",
+      "Camera_Letto",
+      "Corridoio",
+      "Cucina_Prep",
+      "Garage",
+      "Sala_Pranzo",
+      "Soggiorno",
+      "Ufficio",
+      "Uscita_Principale",
+      "Uscita_Retro"
+    ],
+    "missing_log_labels": []
+  },
+  "raw_first": [
+    "2012-01-01",
+    "08:00:09.069663",
+    "M020",
+    "ON"
+  ],
+  "raw_last": [
+    "2012-03-31",
+    "06:58:30.462986",
+    "M010",
+    "OFF"
+  ],
+  "evaluation_scope": "in_sample: modelli scoperti sull'intero log, valutati su un sottoinsieme",
+  "metadata_dataset_hash_matches_after_newline_normalization": true,
+  "dataset_hashes_by_line_ending": {
+    "LF": "97fe1886ffeddf2960b0e19f254abd43e72481e9dc409ba9173a9dbe2f4fb38c",
+    "CRLF": "594643c9f86c934716bfb11d2b8941be7311d4e4ddbf9e6e88e81919f9eaa3d6"
+  },
+  "missing_calendar_days": [
+    "2012-03-20",
+    "2012-03-21",
+    "2012-03-22",
+    "2012-03-23",
+    "2012-03-24",
+    "2012-03-25",
+    "2012-03-26",
+    "2012-03-27",
+    "2012-03-28"
+  ],
+  "raw_rows_on_missing_days": {
+    "2012-03-20": 0,
+    "2012-03-21": 0,
+    "2012-03-22": 0,
+    "2012-03-23": 0,
+    "2012-03-24": 0,
+    "2012-03-25": 0,
+    "2012-03-26": 0,
+    "2012-03-27": 0,
+    "2012-03-28": 0
+  },
+  "process_tree": "+( *( 'Soggiorno', tau ), X( tau, *( 'Uscita_Retro', tau ) ), *( 'Sala_Pranzo', tau ), X( tau, *( 'Bagno_2', tau ) ), *( 'Camera_Letto', tau ), X( tau, +( X( tau, *( 'Uscita_Principale', tau ) ), *( 'Garage', tau ) ) ), X( tau, *( 'Corridoio', tau ) ), *( 'Cucina_Prep', tau ), *( 'Ufficio', tau ), *( 'Bagno_Principale', tau ), *( 'Camera_2', tau ) )",
+  "dataset_hash_serialization": "CSV con fine riga LF, indipendente dal sistema operativo"
+}

@@ -1,0 +1,158 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pnml>
+  <net id="alpha_classic_net_1792796933.0098672" type="http://www.pnml.org/version-2009/grammar/pnmlcoremodel">
+    <name>
+      <text>alpha_classic_net_1792796933.0098672</text>
+    </name>
+    <page id="n0">
+      <place id="start">
+        <name>
+          <text>start</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="({'Camera_Letto'}, {'Uscita_Principale'})">
+        <name>
+          <text>({'Camera_Letto'}, {'Uscita_Principale'})</text>
+        </name>
+      </place>
+      <place id="({'Uscita_Principale'}, {'Garage'})">
+        <name>
+          <text>({'Uscita_Principale'}, {'Garage'})</text>
+        </name>
+      </place>
+      <place id="({'Bagno_Principale'}, {'Uscita_Principale'})">
+        <name>
+          <text>({'Bagno_Principale'}, {'Uscita_Principale'})</text>
+        </name>
+      </place>
+      <place id="({'Uscita_Principale'}, {'Bagno_2'})">
+        <name>
+          <text>({'Uscita_Principale'}, {'Bagno_2'})</text>
+        </name>
+      </place>
+      <place id="end">
+        <name>
+          <text>end</text>
+        </name>
+      </place>
+      <place id="({'Uscita_Principale'}, {'Camera_2'})">
+        <name>
+          <text>({'Uscita_Principale'}, {'Camera_2'})</text>
+        </name>
+      </place>
+      <place id="({'Uscita_Retro'}, {'Bagno_Principale'})">
+        <name>
+          <text>({'Uscita_Retro'}, {'Bagno_Principale'})</text>
+        </name>
+      </place>
+      <place id="({'Uscita_Retro'}, {'Camera_Letto'})">
+        <name>
+          <text>({'Uscita_Retro'}, {'Camera_Letto'})</text>
+        </name>
+      </place>
+      <transition id="Sala_Pranzo">
+        <name>
+          <text>Sala_Pranzo</text>
+        </name>
+      </transition>
+      <transition id="Ufficio">
+        <name>
+          <text>Ufficio</text>
+        </name>
+      </transition>
+      <transition id="Camera_Letto">
+        <name>
+          <text>Camera_Letto</text>
+        </name>
+      </transition>
+      <transition id="Uscita_Retro">
+        <name>
+          <text>Uscita_Retro</text>
+        </name>
+      </transition>
+      <transition id="Uscita_Principale">
+        <name>
+          <text>Uscita_Principale</text>
+        </name>
+      </transition>
+      <transition id="Bagno_2">
+        <name>
+          <text>Bagno_2</text>
+        </name>
+      </transition>
+      <transition id="Cucina_Prep">
+        <name>
+          <text>Cucina_Prep</text>
+        </name>
+      </transition>
+      <transition id="Garage">
+        <name>
+          <text>Garage</text>
+        </name>
+      </transition>
+      <transition id="Corridoio">
+        <name>
+          <text>Corridoio</text>
+        </name>
+      </transition>
+      <transition id="Bagno_Principale">
+        <name>
+          <text>Bagno_Principale</text>
+        </name>
+      </transition>
+      <transition id="Camera_2">
+        <name>
+          <text>Camera_2</text>
+        </name>
+      </transition>
+      <transition id="Soggiorno">
+        <name>
+          <text>Soggiorno</text>
+        </name>
+      </transition>
+      <arc id="140153384084224" source="Soggiorno" target="end"/>
+      <arc id="140153382416384" source="Uscita_Retro" target="({'Uscita_Retro'}, {'Bagno_Principale'})"/>
+      <arc id="140153383533456" source="Cucina_Prep" target="end"/>
+      <arc id="140153384135056" source="start" target="Camera_2"/>
+      <arc id="140153382183952" source="Ufficio" target="end"/>
+      <arc id="140153382572816" source="({'Bagno_Principale'}, {'Uscita_Principale'})" target="Uscita_Principale"/>
+      <arc id="140153382319120" source="Camera_Letto" target="({'Camera_Letto'}, {'Uscita_Principale'})"/>
+      <arc id="140153382416272" source="({'Uscita_Principale'}, {'Garage'})" target="Garage"/>
+      <arc id="140153382375968" source="start" target="Garage"/>
+      <arc id="140153382416160" source="Uscita_Retro" target="({'Uscita_Retro'}, {'Camera_Letto'})"/>
+      <arc id="140153382998704" source="Bagno_Principale" target="end"/>
+      <arc id="140153382265520" source="Sala_Pranzo" target="end"/>
+      <arc id="140153384006192" source="start" target="Ufficio"/>
+      <arc id="140153382266048" source="Corridoio" target="end"/>
+      <arc id="140153382419520" source="Uscita_Principale" target="({'Uscita_Principale'}, {'Camera_2'})"/>
+      <arc id="140153382415936" source="({'Uscita_Retro'}, {'Bagno_Principale'})" target="Bagno_Principale"/>
+      <arc id="140153383533264" source="Camera_2" target="end"/>
+      <arc id="140153384134736" source="start" target="Camera_Letto"/>
+      <arc id="140153382376272" source="start" target="Soggiorno"/>
+      <arc id="140153383940560" source="start" target="Cucina_Prep"/>
+      <arc id="140153384104784" source="start" target="Sala_Pranzo"/>
+      <arc id="140153384105040" source="start" target="Bagno_2"/>
+      <arc id="140153382998480" source="Camera_Letto" target="end"/>
+      <arc id="140153383059920" source="({'Camera_Letto'}, {'Uscita_Principale'})" target="Uscita_Principale"/>
+      <arc id="140153383059536" source="Uscita_Principale" target="({'Uscita_Principale'}, {'Bagno_2'})"/>
+      <arc id="140153384149856" source="start" target="Corridoio"/>
+      <arc id="140153382416608" source="({'Uscita_Principale'}, {'Camera_2'})" target="Camera_2"/>
+      <arc id="140153382415712" source="({'Uscita_Retro'}, {'Camera_Letto'})" target="Camera_Letto"/>
+      <arc id="140153384150128" source="start" target="Bagno_Principale"/>
+      <arc id="140153384084464" source="Bagno_2" target="end"/>
+      <arc id="140153382573936" source="Bagno_Principale" target="({'Bagno_Principale'}, {'Uscita_Principale'})"/>
+      <arc id="140153382419184" source="({'Uscita_Principale'}, {'Bagno_2'})" target="Bagno_2"/>
+      <arc id="140153382416496" source="Uscita_Principale" target="({'Uscita_Principale'}, {'Garage'})"/>
+    </page>
+    <finalmarkings>
+      <marking>
+        <place idref="end">
+          <text>1</text>
+        </place>
+      </marking>
+    </finalmarkings>
+  </net>
+</pnml>

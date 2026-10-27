@@ -1,0 +1,15 @@
+{
+  "full_csv": "/content/aruba_runs/20261023T213130827760Z/comparison_20261023T213310299553Z/data/dataset_aruba_attivita.csv",
+  "evaluation_csv": "/content/aruba_runs/20261023T213130827760Z/comparison_20261023T213310299553Z/evaluation_log.csv",
+  "directory": "/content/aruba_runs/20261023T213130827760Z/comparison_20261023T213310299553Z/candidates/inductive_000",
+  "config": {
+    "id": "inductive_000",
+    "label": "Inductive noise=0.00",
+    "miner": "Inductive Miner",
+    "parameters": {
+      "noise_threshold": 0.0
+    }
+  },
+  "seed": 42,
+  "checkpoint_dir": "/content/drive/MyDrive/ArubaColab/results/20261023T213130827760Z/comparison_20261023T213310299553Z/candidates/inductive_000"
+}

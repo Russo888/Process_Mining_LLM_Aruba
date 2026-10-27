@@ -1,0 +1,101 @@
+{
+  "configs": [
+    {
+      "id": "inductive_020",
+      "label": "Inductive noise=0.20 (riferimento)",
+      "miner": "Inductive Miner",
+      "parameters": {
+        "noise_threshold": 0.2
+      }
+    },
+    {
+      "id": "inductive_000",
+      "label": "Inductive noise=0.00",
+      "miner": "Inductive Miner",
+      "parameters": {
+        "noise_threshold": 0.0
+      }
+    },
+    {
+      "id": "inductive_010",
+      "label": "Inductive noise=0.10",
+      "miner": "Inductive Miner",
+      "parameters": {
+        "noise_threshold": 0.1
+      }
+    },
+    {
+      "id": "heuristic_030",
+      "label": "Heuristic dependency=0.30",
+      "miner": "Heuristic Miner",
+      "parameters": {
+        "dependency_threshold": 0.3
+      }
+    },
+    {
+      "id": "heuristic_050",
+      "label": "Heuristic dependency=0.50",
+      "miner": "Heuristic Miner",
+      "parameters": {
+        "dependency_threshold": 0.5
+      }
+    },
+    {
+      "id": "heuristic_010",
+      "label": "Heuristic dependency=0.10",
+      "miner": "Heuristic Miner",
+      "parameters": {
+        "dependency_threshold": 0.1
+      }
+    },
+    {
+      "id": "alpha",
+      "label": "Alpha Miner",
+      "miner": "Alpha Miner",
+      "parameters": {}
+    }
+  ],
+  "completed": 7,
+  "planned": 7,
+  "packages": {
+    "pm4py": "2.7.23.11",
+    "pandas": "2.2.3",
+    "numpy": "2.1.3"
+  },
+  "first_by_in_sample_f1": "Heuristic dependency=0.30",
+  "dataset_csv_sha256": "594643c9f86c934716bfb11d2b8941be7311d4e4ddbf9e6e88e81919f9eaa3d6",
+  "evaluation": {
+    "seed": 42,
+    "max_eval_cases": 20,
+    "total_cases": 322,
+    "evaluated_cases": [
+      "2012-01-07_Sera",
+      "2012-01-08_Notte",
+      "2012-01-08_Pomeriggio",
+      "2012-01-11_Mattina",
+      "2012-01-16_Sera",
+      "2012-02-03_Mattina",
+      "2012-02-03_Sera",
+      "2012-02-06_Pomeriggio",
+      "2012-02-11_Notte",
+      "2012-02-11_Mattina",
+      "2012-02-20_Notte",
+      "2012-02-24_Mattina",
+      "2012-02-27_Notte",
+      "2012-02-28_Notte",
+      "2012-02-29_Notte",
+      "2012-03-01_Mattina",
+      "2012-03-03_Pomeriggio",
+      "2012-03-07_Mattina",
+      "2012-03-08_Pomeriggio",
+      "2012-03-17_Sera"
+    ],
+    "evaluated_events": 21069,
+    "dataset_sha256": "97fe1886ffeddf2960b0e19f254abd43e72481e9dc409ba9173a9dbe2f4fb38c",
+    "pm4py_version": "2.7.23.11",
+    "selection_criterion": "harmonic_mean_fitness_precision",
+    "scope": "in_sample: stesso log di discovery, stessi casi e seed per tutti i candidati",
+    "metrics_sha256": "c9c746f981aab6b7941865dcb17f22d39e4b9a2edd8e97e5e20236e3db1ee59f"
+  },
+  "note": "Classifica in-sample: non dimostra generalizzazione. Controllare anche precision e sequenze permutate."
+}

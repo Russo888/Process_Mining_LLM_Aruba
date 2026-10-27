@@ -1,0 +1,11 @@
+{
+  "stage": "discovery_completed",
+  "config": {
+    "id": "heuristic_050",
+    "label": "Heuristic dependency=0.50",
+    "miner": "Heuristic Miner",
+    "parameters": {
+      "dependency_threshold": 0.5
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "seed": 42,
+  "max_eval_cases": 20,
+  "total_cases": 322,
+  "evaluated_cases": [
+    "2012-01-07_Sera",
+    "2012-01-08_Notte",
+    "2012-01-08_Pomeriggio",
+    "2012-01-11_Mattina",
+    "2012-01-16_Sera",
+    "2012-02-03_Mattina",
+    "2012-02-03_Sera",
+    "2012-02-06_Pomeriggio",
+    "2012-02-11_Notte",
+    "2012-02-11_Mattina",
+    "2012-02-20_Notte",
+    "2012-02-24_Mattina",
+    "2012-02-27_Notte",
+    "2012-02-28_Notte",
+    "2012-02-29_Notte",
+    "2012-03-01_Mattina",
+    "2012-03-03_Pomeriggio",
+    "2012-03-07_Mattina",
+    "2012-03-08_Pomeriggio",
+    "2012-03-17_Sera"
+  ],
+  "evaluated_events": 21069,
+  "dataset_sha256": "97fe1886ffeddf2960b0e19f254abd43e72481e9dc409ba9173a9dbe2f4fb38c",
+  "pm4py_version": "2.7.23.11",
+  "selection_criterion": "harmonic_mean_fitness_precision",
+  "scope": "in_sample: stesso log di discovery, stessi casi e seed per tutti i candidati",
+  "metrics_sha256": "c9c746f981aab6b7941865dcb17f22d39e4b9a2edd8e97e5e20236e3db1ee59f"
+}

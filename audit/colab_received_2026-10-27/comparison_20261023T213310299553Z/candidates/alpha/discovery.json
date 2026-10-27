@@ -1,0 +1,9 @@
+{
+  "stage": "discovery_completed",
+  "config": {
+    "id": "alpha",
+    "label": "Alpha Miner",
+    "miner": "Alpha Miner",
+    "parameters": {}
+  }
+}

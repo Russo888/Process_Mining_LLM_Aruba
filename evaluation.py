@@ -1,14 +1,13 @@
+import json
+import math
+from hashlib import sha256
 import numpy as np
 import pm4py
-from pm4py.algo.evaluation.replay_fitness import algorithm as fitness_evaluator
-from pm4py.algo.evaluation.precision import algorithm as precision_evaluator
-from pm4py.algo.evaluation.generalization import algorithm as generalization_evaluator
-from pm4py.algo.evaluation.simplicity import algorithm as simplicity_evaluator
-
 # Costanti PM4Py
 CASE_ID_KEY = "case:concept:name"
 ACTIVITY_KEY = "concept:name"
 TIMESTAMP_KEY = "time:timestamp"
+RANDOM_SEED = 42
 MAX_EVAL_CASES = 50  # Numero di periodi da valutare (Safe Mode)
 
 def evaluate(df, net, im, fm):
@@ -41,17 +40,33 @@ def evaluate(df, net, im, fm):
     except Exception as e:
         return {"error": str(e)}
 
-def evaluate_models_safe(df, models):
+def evaluate_models_safe(df, models, metadata_path=None):
     print("\n3. Valutazione (Safe Mode)...")
     unique_cases = df[CASE_ID_KEY].unique()
     
     if len(unique_cases) > MAX_EVAL_CASES:
-        sampled_cases = np.random.choice(unique_cases, MAX_EVAL_CASES, replace=False)
+        sampled_cases = np.random.default_rng(RANDOM_SEED).choice(unique_cases, MAX_EVAL_CASES, replace=False)
         eval_df = df[df[CASE_ID_KEY].isin(sampled_cases)].copy()
         print(f"   Valutazione su campione di {MAX_EVAL_CASES} periodi.")
     else:
         eval_df = df
         print(f"   Valutazione su tutti i {len(unique_cases)} periodi.")
+
+    if metadata_path is not None:
+        import pandas as pd
+        fingerprint_df = df[[CASE_ID_KEY, ACTIVITY_KEY, TIMESTAMP_KEY]].copy()
+        fingerprint_df[TIMESTAMP_KEY] = pd.to_datetime(fingerprint_df[TIMESTAMP_KEY]).astype(str)
+        metadata = {
+            "seed": RANDOM_SEED,
+            "max_eval_cases": MAX_EVAL_CASES,
+            "total_cases": int(len(unique_cases)),
+            "evaluated_cases": [str(c) for c in eval_df[CASE_ID_KEY].unique()],
+            "evaluated_events": int(len(eval_df)),
+            "dataset_sha256": sha256(fingerprint_df.to_csv(index=False).encode("utf-8")).hexdigest(),
+            "pm4py_version": pm4py.__version__,
+            "selection_criterion": "harmonic_mean_fitness_precision",
+            "scope": "in_sample: modelli scoperti sull'intero log, valutati su un sottoinsieme"
+        }
 
     scores = {}
     for name, model in models.items():
@@ -74,44 +89,35 @@ def evaluate_models_safe(df, models):
             print(f"-> FALLITO (Eccezione imprevista)")
             scores[name] = {"error": str(e)}
             
+    if metadata_path is not None:
+        metadata["metrics_sha256"] = sha256(json.dumps(scores, sort_keys=True).encode("utf-8")).hexdigest()
+        with open(metadata_path, "w", encoding="utf-8") as handle:
+            json.dump(metadata, handle, indent=2, ensure_ascii=False)
     return scores
 
-def choose_best(results: dict):
-    """
-    Seleziona il miglior modello basandosi sulla somma delle metriche (Fitness + Precision).
-    """
-    valid = {}
-    for name, metrics in results.items():
-        if not isinstance(metrics, dict):
-            continue
-        if "error" in metrics:
-            continue
-        
-        # Verifica che fitness e precision siano presenti
-        if "fitness" in metrics and "precision" in metrics:
-            valid[name] = metrics
+def f1_score(metrics):
+    """Media armonica di fitness e precision; rifiuta metriche incomplete/non valide."""
+    if not isinstance(metrics, dict) or "error" in metrics:
+        return None
+    try:
+        fitness = float(metrics["fitness"])
+        precision = float(metrics["precision"])
+    except (KeyError, TypeError, ValueError):
+        return None
+    if not all(math.isfinite(v) and 0 <= v <= 1 for v in (fitness, precision)):
+        return None
+    return 2 * fitness * precision / (fitness + precision) if fitness + precision else 0.0
 
+
+def choose_best(results: dict):
+    """Seleziona il modello con la maggiore media armonica fitness/precision."""
+    valid = {name: m for name, m in results.items() if f1_score(m) is not None}
     if not valid:
         return None, None
+    name = max(valid, key=lambda key: f1_score(valid[key]))
+    return name, valid[name]
 
-    # Scegli il modello con il punteggio totale più alto (Fitness + Precision)
-    best_name = max(
-        valid,
-        key=lambda k: valid[k]["fitness"] + valid[k]["precision"]
-    )
-    
-    return best_name, valid[best_name]
 
 def choose_best_model_internal(scores):
-    """Sceglie il modello migliore basandosi sull'F1 Score."""
-    best_name = None
-    best_f1 = -1
-    for name, metrics in scores.items():
-        if isinstance(metrics, dict) and "error" not in metrics:
-            fit = metrics.get("fitness", 0)
-            prec = metrics.get("precision", 0)
-            f1 = 2 * (fit * prec) / (fit + prec) if (fit + prec) > 0 else 0
-            if f1 > best_f1:
-                best_f1 = f1
-                best_name = name
-    return best_name
+    """Alias compatibile per la dashboard; stesso criterio di choose_best."""
+    return choose_best(scores)[0]

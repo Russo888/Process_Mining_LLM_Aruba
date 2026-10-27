@@ -1,0 +1,188 @@
+{
+  "events": 65783,
+  "cases": 109,
+  "zones": 12,
+  "trace_lengths": {
+    "count": 109.0,
+    "mean": 603.5137614678899,
+    "std": 556.2424633643221,
+    "min": 1.0,
+    "25%": 249.0,
+    "50%": 481.0,
+    "75%": 746.0,
+    "max": 3708.0
+  },
+  "unique_variants": 108,
+  "top5_variant_case_coverage": 0.05504587155963303,
+  "periods": {
+    "Mattina": {
+      "events": 4628,
+      "cases": 28,
+      "events_per_case": 165.28571428571428,
+      "hours_in_window": 6,
+      "events_per_nominal_hour": 27.547619047619047
+    },
+    "Notte": {
+      "events": 20279,
+      "cases": 27,
+      "events_per_case": 751.074074074074,
+      "hours_in_window": 6,
+      "events_per_nominal_hour": 125.179012345679
+    },
+    "Pomeriggio": {
+      "events": 21955,
+      "cases": 27,
+      "events_per_case": 813.1481481481482,
+      "hours_in_window": 7,
+      "events_per_nominal_hour": 116.16402116402116
+    },
+    "Sera": {
+      "events": 18921,
+      "cases": 27,
+      "events_per_case": 700.7777777777778,
+      "hours_in_window": 5,
+      "events_per_nominal_hour": 140.15555555555557
+    }
+  },
+  "zone_counts": {
+    "Ufficio": 18088,
+    "Soggiorno": 10706,
+    "Bagno_Principale": 8356,
+    "Sala_Pranzo": 8231,
+    "Cucina_Prep": 7050,
+    "Camera_Letto": 4887,
+    "Corridoio": 3127,
+    "Camera_2": 2738,
+    "Bagno_2": 1818,
+    "Garage": 670,
+    "Uscita_Principale": 64,
+    "Uscita_Retro": 48
+  },
+  "raw_states": {
+    "ON": 92269,
+    "OFF": 92269,
+    "OPEN": 400,
+    "CLOSE": 400
+  },
+  "sensor_types": {
+    "Motion-01": 139552,
+    "MotionArea-01": 44986,
+    "Door-01": 800
+  },
+  "active_only_events": 33310,
+  "change_from_both_states": 0.49363817399632126,
+  "local_sample_events": 94,
+  "local_sample_cases": 5,
+  "local_sample_periods": {
+    "Mattina": 94
+  },
+  "models": {
+    "Alpha Miner": {
+      "places": 7,
+      "transitions": 12,
+      "silent": 0,
+      "arcs": 28,
+      "labels": [
+        "Bagno_2",
+        "Bagno_Principale",
+        "Camera_2",
+        "Camera_Letto",
+        "Corridoio",
+        "Cucina_Prep",
+        "Garage",
+        "Sala_Pranzo",
+        "Soggiorno",
+        "Ufficio",
+        "Uscita_Principale",
+        "Uscita_Retro"
+      ],
+      "nodes_unreachable_from_initial": 2,
+      "nodes_unable_to_reach_final": 5,
+      "source_transitions": [
+        "Uscita_Principale"
+      ],
+      "sink_transitions": [
+        "Bagno_2",
+        "Uscita_Retro"
+      ]
+    },
+    "Heuristic Miner": {
+      "places": 5,
+      "transitions": 12,
+      "silent": 0,
+      "arcs": 21,
+      "labels": [
+        "Bagno_2",
+        "Bagno_Principale",
+        "Camera_2",
+        "Camera_Letto",
+        "Corridoio",
+        "Cucina_Prep",
+        "Garage",
+        "Sala_Pranzo",
+        "Soggiorno",
+        "Ufficio",
+        "Uscita_Principale",
+        "Uscita_Retro"
+      ],
+      "nodes_unreachable_from_initial": 6,
+      "nodes_unable_to_reach_final": 6,
+      "source_transitions": [
+        "Bagno_2",
+        "Uscita_Principale",
+        "Uscita_Retro"
+      ],
+      "sink_transitions": []
+    },
+    "Inductive Miner": {
+      "places": 28,
+      "transitions": 32,
+      "silent": 22,
+      "arcs": 80,
+      "labels": [
+        "Bagno_2",
+        "Bagno_Principale",
+        "Camera_2",
+        "Camera_Letto",
+        "Corridoio",
+        "Cucina_Prep",
+        "Garage",
+        "Sala_Pranzo",
+        "Soggiorno",
+        "Ufficio"
+      ],
+      "nodes_unreachable_from_initial": 0,
+      "nodes_unable_to_reach_final": 0,
+      "source_transitions": [],
+      "sink_transitions": []
+    }
+  },
+  "negative_control_10_first_cases": {
+    "real_fitness": {
+      "perc_fit_traces": 10.0,
+      "average_trace_fitness": 0.9428049973803556,
+      "log_fitness": 0.9976176464239295,
+      "percentage_of_fitting_traces": 10.0
+    },
+    "shuffled_fitness": {
+      "perc_fit_traces": 0.0,
+      "average_trace_fitness": 0.9424333385694188,
+      "log_fitness": 0.9971741738395372,
+      "percentage_of_fitting_traces": 0.0
+    }
+  },
+  "next_zone_chronological_baseline": {
+    "train_before": "2011-11-22",
+    "train_transitions": 52170,
+    "test_transitions": 13504,
+    "majority_label": "Ufficio",
+    "majority_accuracy": 0.26510663507109006,
+    "markov_top1_accuracy": 0.5184389810426541
+  },
+  "inductive_evaluation_50_cases": {
+    "perc_fit_traces": 10.0,
+    "average_trace_fitness": 0.9890513843656893,
+    "log_fitness": 0.9978118074392874,
+    "percentage_of_fitting_traces": 10.0
+  }
+}
