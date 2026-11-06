@@ -36,3 +36,10 @@ test_imports.py
 !/audit/gemini_revision_render/quality_check.json
 /audit/historical_layout_pre_gemini/*
 !/audit/historical_layout_pre_gemini/README.md
+
+# Sorgenti e anteprime temporanei del PowerPoint
+/audit/presentation_build/
+
+# Backup e render locali del controllo sulle quattro metriche
+/audit/quality_update_2026-11-05/
+/audit/test_runtime/

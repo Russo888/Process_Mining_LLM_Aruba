@@ -1,0 +1,87 @@
+{
+  "computed_at_utc": "2026-11-05T18:29:34.033180+00:00",
+  "pm4py_version": "2.7.23.11",
+  "pandas_version": "3.0.1",
+  "models_sha256": "4ad49e196daa6b112c79fcf194826e810efe8d9d8230207386026f73b5414f5c",
+  "original_metrics_sha256": "dc7205938625f601f70c476bfcfebab99a23bdd3e55b2e71e37e23e58258ab35",
+  "dataset_sha256": "97fe1886ffeddf2960b0e19f254abd43e72481e9dc409ba9173a9dbe2f4fb38c",
+  "evaluated_cases": [
+    "2012-01-07_Sera",
+    "2012-01-08_Notte",
+    "2012-01-08_Pomeriggio",
+    "2012-01-11_Mattina",
+    "2012-01-16_Sera",
+    "2012-02-03_Mattina",
+    "2012-02-03_Sera",
+    "2012-02-06_Pomeriggio",
+    "2012-02-11_Notte",
+    "2012-02-11_Mattina",
+    "2012-02-20_Notte",
+    "2012-02-24_Mattina",
+    "2012-02-27_Notte",
+    "2012-02-28_Notte",
+    "2012-02-29_Notte",
+    "2012-03-01_Mattina",
+    "2012-03-03_Pomeriggio",
+    "2012-03-07_Mattina",
+    "2012-03-08_Pomeriggio",
+    "2012-03-17_Sera"
+  ],
+  "evaluated_events": 21069,
+  "methods": {
+    "simplicity": "PM4Py SIMPLICITY_ARC_DEGREE (default k=2)",
+    "generalization": "PM4Py GENERALIZATION_TOKEN"
+  },
+  "scope": "Original in-sample cases. Fitness/precision copied unchanged; no discovery. Generalization is not held-out predictive performance.",
+  "results": [
+    {
+      "model": "Inductive noise=0.20 (riferimento)",
+      "fitness": 0.9998583842422839,
+      "precision": 0.08398199566503706,
+      "simplicity": 0.5877862595419847,
+      "generalization": 0.7878163396017204
+    },
+    {
+      "model": "Inductive noise=0.00",
+      "fitness": 1.0,
+      "precision": 0.08398199566503706,
+      "simplicity": 0.6256684491978609,
+      "generalization": 0.6867100025740731
+    },
+    {
+      "model": "Inductive noise=0.10",
+      "fitness": 0.9998583842422839,
+      "precision": 0.08398199566503706,
+      "simplicity": 0.5877862595419847,
+      "generalization": 0.7878163396017204
+    },
+    {
+      "model": "Heuristic dependency=0.30",
+      "fitness": 0.9577958987809936,
+      "precision": 0.17400030878493133,
+      "simplicity": 0.46303501945525294,
+      "generalization": 0.680583812329475
+    },
+    {
+      "model": "Heuristic dependency=0.50",
+      "fitness": 0.9577958987809936,
+      "precision": 0.17400030878493133,
+      "simplicity": 0.46303501945525294,
+      "generalization": 0.680583812329475
+    },
+    {
+      "model": "Heuristic dependency=0.10",
+      "fitness": 0.9928559441900606,
+      "precision": 0.1430153164790552,
+      "simplicity": 0.444043321299639,
+      "generalization": 0.692642787969852
+    },
+    {
+      "model": "Alpha Miner",
+      "fitness": 0.003295406934063938,
+      "precision": 0.6015037593984962,
+      "simplicity": 0.4666666666666667,
+      "generalization": 0.9127950295650834
+    }
+  ]
+}

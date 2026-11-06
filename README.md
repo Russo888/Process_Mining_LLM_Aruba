@@ -1,10 +1,10 @@
 # CASAS Aruba — Process Mining e analisi LLM
 
-Il progetto trasforma gli eventi dei sensori CASAS Aruba in un event log, scopre tre reti di Petri e confronta fitness e precision. La dashboard permette analisi esplorative con Google Gemini tramite API key.
+Il progetto trasforma gli eventi dei sensori CASAS Aruba in un event log, applica tre algoritmi di discovery e valuta Fitness, Precision, Simplicity e Generalization. La dashboard permette analisi esplorative con Google Gemini tramite API key.
 
-La [relazione di progetto](DOCUMENTAZIONE_PROGETTO.md), disponibile anche in [Word con guida al sito](DOCUMENTAZIONE_PROGETTO_CON_GUIDA.docx), documenta i tentativi successivi, le motivazioni, i risultati e i limiti. L'aggiornamento del 27 ottobre 2026 include il confronto completato delle sette configurazioni, interruzioni e tempi effettivi, diagnostiche dell'ordine, integrazione nella dashboard, schermate aggiornate, verifiche e sviluppi futuri. Conserva anche gli esperimenti che non hanno migliorato i risultati. Il capitolo 9 spiega l'uso del sito e indica otto posizioni per gli screenshot con istruzioni e didascalie proposte.
+La [relazione tecnica in inglese (PDF)](PROJECT_DOCUMENTATION_EN.pdf) documenta gli esperimenti, i risultati, i limiti e l’uso della dashboard. Il capitolo 7 riporta le quattro dimensioni di qualità per tutte le sette configurazioni.
 
-È disponibile anche la [versione inglese in Word](PROJECT_DOCUMENTATION_EN.docx), con [sorgente Markdown](PROJECT_DOCUMENTATION_EN.md), traduzione completa e figure già inserite nei punti S1–S8 della guida. Le figure AI mostrano lo stato reale non configurato, non una risposta generata: questa distinzione è esplicitata nel testo. L'edizione inglese è separata dalla documentazione italiana.
+La slide 13 della [presentazione in inglese (PowerPoint)](Aruba_Process_Mining_Visual_EN.pptx) e la sezione **Qualità dei modelli a confronto** della dashboard mostrano Fitness, Precision, Simplicity e Generalization per le sette configurazioni, con barre affiancate su scala 0–1. Il grafico è stato aggiornato dopo la stesura del PDF. Restano da completare l’analisi quantitativa dei tempi e la valutazione predittiva su casi separati.
 
 ## Avvio Windows
 
@@ -83,6 +83,39 @@ Il primo log analizzato copriva **1–28 novembre 2011**, con **65.783 eventi, 1
 Cambiare filtri, mappatura o segmentazione richiede la rigenerazione di CSV, modelli e metriche con `main.py`.
 
 ## Discovery e valutazione
+
+### Aggiornamento del 5 novembre 2026
+
+Alpha usa `pm4py.discover_petri_net_alpha`, Heuristic usa `pm4py.discover_petri_net_heuristics`. Inductive ora esegue esplicitamente `pm4py.discover_process_tree_inductive` seguito da `pm4py.convert_to_petri_net`. La modifica riguarda la pipeline locale e i sorgenti incorporati in entrambi i notebook Colab, con le stesse soglie precedenti. I modelli storici rimangono quelli esportati da Colab: non sono stati riscoperti né sostituiti.
+
+Simplicity e Generalization sono state calcolate sui sette modelli già salvati, con PM4Py 2.7.23.11, usando gli stessi 20 casi (21.069 eventi) identificati nei metadati originali. Fitness e Precision sono riportate dai risultati originali senza ricalcolarle.
+
+- **Simplicity:** variante PM4Py `SIMPLICITY_ARC_DEGREE`, parametro predefinito `k=2`. Misura la semplicità tramite il grado degli elementi della rete, incluse le transizioni silenti.
+- **Generalization:** variante PM4Py `GENERALIZATION_TOKEN`, basata sulla frequenza delle transizioni attivate nel replay. È una metrica di qualità del process mining sul campione disponibile, non una prova predittiva su giorni nuovi.
+
+| Modello | Fitness | Precision | Simplicity | Generalization |
+|---|---:|---:|---:|---:|
+| Inductive noise=0.20 (riferimento) | 0.999858 | 0.083982 | 0.587786 | 0.787816 |
+| Inductive noise=0.00 | 1.000000 | 0.083982 | 0.625668 | 0.686710 |
+| Inductive noise=0.10 | 0.999858 | 0.083982 | 0.587786 | 0.787816 |
+| Heuristic dependency=0.30 | 0.957796 | 0.174000 | 0.463035 | 0.680584 |
+| Heuristic dependency=0.50 | 0.957796 | 0.174000 | 0.463035 | 0.680584 |
+| Heuristic dependency=0.10 | 0.992856 | 0.143015 | 0.444043 | 0.692643 |
+| Alpha Miner | 0.003295 | 0.601504 | 0.466667 | 0.912795 |
+
+Heuristic 0.30 e 0.50 restano a pari merito per la media armonica di Fitness e Precision, ma Inductive ottiene Simplicity più alta. Alpha ottiene Generalization alta pur avendo fitness quasi nulla: le quattro dimensioni vanno interpretate congiuntamente. Non viene introdotta una media arbitraria delle quattro metriche e il criterio F1 storico resta invariato.
+
+Il confronto completo è disponibile in [quality_metrics.csv](data/experiments/comparison_20261023T213310299553Z/quality_metrics.csv). [quality_metrics.json](data/experiments/comparison_20261023T213310299553Z/quality_metrics.json) registra metodi, versioni, casi valutati e impronte di dati, modelli e metriche originali. Per il confronto installato, la dashboard verifica che il supplemento corrisponda ai modelli, alle metriche originali e al campione valutato. Poi affianca Simplicity e Generalization ai valori di Fitness e Precision del benchmark Colab. La classifica usa la media armonica di Fitness e Precision (F1).
+
+Per ripetere esclusivamente il calcolo aggiuntivo sui modelli salvati:
+
+```powershell
+.venv_new\Scripts\python.exe evaluate_saved_models.py
+```
+
+È possibile specificare un altro pacchetto completo con `--experiment percorso`. Lo script verifica l'impronta del dataset e l'identità del campione prima del calcolo. Non esegue discovery o precision. Le nuove esecuzioni della pipeline e del benchmark calcolano tutte e quattro le metriche.
+
+### Risultati e criterio di selezione originali
 
 La pipeline locale usa Alpha Miner, Heuristic Miner (`dependency_threshold=0.5`) e Inductive Miner (`noise_threshold=0.2`). I modelli sono scoperti sull'intero log. La valutazione locale token-based usa al massimo **50 casi completi**, estratti con `numpy.random.default_rng(42)` e condivisi fra tutti i modelli. Il secondo esperimento Colab completato contiene invece solo Inductive e valuta **20 casi su 322**. Il benchmark delle sette configurazioni è stato completato e acquisito: Heuristic 0,30 e 0,50 sono primi a pari merito, con fitness 0,957796, precision 0,174000 e media armonica 0,294500. Il controllo sulle sequenze mescolate mostra ancora una selettività debole. Gli artefatti ricevuti sono conservati separatamente in `audit/colab_received_2026-10-27/`.
 

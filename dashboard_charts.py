@@ -3,13 +3,13 @@ import altair as alt
 from graphviz import Digraph
 from dashboard_data import PERIODS, transition_summary
 
-METRICS = ["Fitness", "Precision", "F1 Score"]
-COLORS = ["#38bdf8", "#fbbf24", "#c4b5fd"]
+METRICS = ["Fitness", "Precision", "Simplicity", "Generalization"]
+COLORS = ["#55cfc8", "#7eadea", "#f2b66a", "#c5a7ef"]
 
 
 def metric_comparison_chart(table):
     long = table.reset_index().melt(id_vars="Modello", value_vars=METRICS,
-                                  var_name="Metrica", value_name="Valore")
+                                  var_name="Metrica", value_name="Valore").dropna(subset=["Valore"])
     if len(table) > 3:
         # I nomi delle configurazioni richiedono più spazio dei tre algoritmi iniziali.
         return alt.Chart(long).mark_bar().encode(

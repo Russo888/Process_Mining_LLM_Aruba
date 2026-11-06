@@ -68,6 +68,18 @@ def load_result_bundle(folder):
         if record.get("status") == "ok" and (record.get("metrics") != scores.get(name)
                 or (metadata and record.get("evaluated_cases") != metadata.get("evaluated_cases"))):
             raise ValueError("Il confronto contiene metriche o campioni non coerenti")
+    supplement = folder.parent / "quality_metrics.json"
+    if result_file.is_file() and supplement.is_file():
+        quality = json.loads(supplement.read_text(encoding="utf-8"))
+        for key, filename in (("models_sha256", "models.pkl"), ("original_metrics_sha256", "metrics.json")):
+            if hashlib.sha256((folder / filename).read_bytes()).hexdigest() != quality[key]:
+                raise ValueError("Le quattro metriche si riferiscono a un pacchetto diverso")
+        if any(quality[key] != metadata[key] for key in ("dataset_sha256", "evaluated_cases", "evaluated_events")):
+            raise ValueError("Campione diverso nel confronto delle quattro metriche")
+        for row in quality["results"]:
+            name = row["model"]
+            scores[name].update({key: row[key] for key in ("simplicity", "generalization")})
+            diagnostics[name]["metrics"] = scores[name]
     return df, models, scores, metadata, diagnostics
 
 
@@ -85,7 +97,9 @@ def comparison_details(diagnostics):
         execution = r.get("execution", {})
         rows.append({"Modello": name, "Stato": r.get("status"),
                      "Fitness": r.get("metrics", {}).get("fitness"),
-                     "Precision": r.get("metrics", {}).get("precision"), "F1": r.get("f1"),
+                     "Precision": r.get("metrics", {}).get("precision"),
+                     "Simplicity": r.get("metrics", {}).get("simplicity"),
+                     "Generalization": r.get("metrics", {}).get("generalization"), "F1": r.get("f1"),
                      "Tracce fitting %": r.get("fit_traces_percent"),
                      "Tracce mescolate fitting %": r.get("shuffled_fit_traces_percent"),
                      "Fitness mescolata": r.get("shuffled_fitness"),

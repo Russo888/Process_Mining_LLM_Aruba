@@ -36,12 +36,13 @@ class PresentationTests(unittest.TestCase):
 
     def test_metric_chart_has_separate_bars_on_unit_scale(self):
         table = pd.DataFrame({"Modello": ["A", "B"], "Fitness": [.1, .9],
-                              "Precision": [.8, .2], "F1 Score": [.178, .327]}).set_index("Modello")
+                              "Precision": [.8, .2], "Simplicity": [.5,.7],
+                              "Generalization": [.4,.6]}).set_index("Modello")
         spec = metric_comparison_chart(table).to_dict()
         self.assertEqual(spec["encoding"]["y"]["scale"]["domain"], [0, 1])
         self.assertIsNone(spec["encoding"]["y"]["stack"])
         self.assertEqual(spec["encoding"]["xOffset"]["field"], "Metrica")
-        self.assertEqual(sum(len(rows) for rows in spec["datasets"].values()), 6)
+        self.assertEqual(sum(len(rows) for rows in spec["datasets"].values()), 8)
 
     def test_long_logs_keep_all_events_when_grouping_days(self):
         df = pd.DataFrame({CASE: list(map(str, range(90))), ZONE: ["A"]*90,

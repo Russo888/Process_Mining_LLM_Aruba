@@ -16,7 +16,7 @@ import numpy as np
 import pandas as pd
 import pm4py
 from colab_pipeline import CASE, ACTIVITY, TIME, load_event_log, discover_one, sha256_file
-from evaluation import f1_score
+from evaluation import f1_score, evaluate_additional_dimensions
 
 DEFAULT_CONFIGS = [
     {"id": "inductive_020", "label": "Inductive noise=0.20 (riferimento)", "miner": "Inductive Miner", "parameters": {"noise_threshold": .2}},
@@ -81,6 +81,7 @@ def worker(spec_path):
         fitness = pm4py.fitness_token_based_replay(sample, *model)
         precision = pm4py.precision_token_based_replay(sample, *model)
         metrics = {"fitness": float(fitness["log_fitness"]), "precision": float(precision)}
+        metrics.update(evaluate_additional_dimensions(sample, *model))
         shuffled = sample[[CASE, ACTIVITY, TIME]].copy()
         rng = np.random.default_rng(spec["seed"])
         for _, group in shuffled.groupby(CASE, sort=False):
@@ -194,6 +195,7 @@ def save_checkpoint(root, results, configs, metadata, backup_dir=None):
     (root / "requirements_colab.txt").write_text("".join(f"{name}=={importlib.metadata.version(name)}\n" for name in ["pm4py", "pandas", "numpy"]), encoding="utf-8")
     rows = [{"Modello": r["label"], "Stato": r["status"],
              "Fitness": r.get("metrics", {}).get("fitness"), "Precision": r.get("metrics", {}).get("precision"),
+             "Simplicity": r.get("metrics", {}).get("simplicity"), "Generalization": r.get("metrics", {}).get("generalization"),
              "F1": r.get("f1"), "Tracce fitting %": r.get("fit_traces_percent"),
              "Fitness mescolata": r.get("shuffled_fitness"), "Differenza ordine": r.get("order_fitness_gap"),
              "Etichette omesse": ", ".join(r.get("missing_log_labels", [])), "Errore": r.get("error", "")}

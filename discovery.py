@@ -48,10 +48,11 @@ def discover_models(df):
     # --- INDUCTIVE MINER ---
     try:
         print("   -> Inductive Miner...", end=" ")
-        net, im, fm = pm4py.discover_petri_net_inductive(
+        tree = pm4py.discover_process_tree_inductive(
             df, noise_threshold=0.2, 
             case_id_key=CASE_ID_KEY, activity_key=ACTIVITY_KEY, timestamp_key=TIMESTAMP_KEY
         )
+        net, im, fm = pm4py.convert_to_petri_net(tree)
         models["Inductive Miner"] = (net, im, fm)
         print("OK")
     except Exception as e:

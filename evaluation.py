@@ -10,6 +10,22 @@ TIMESTAMP_KEY = "time:timestamp"
 RANDOM_SEED = 42
 MAX_EVAL_CASES = 50  # Numero di periodi da valutare (Safe Mode)
 
+def evaluate_additional_dimensions(df, net, im, fm):
+    """Simplicity arc-degree e Generalization token-based sul campione fornito.
+
+    Generalization è una misura strutturale basata sul replay, non un test
+    predittivo su dati futuri. Non esegue discovery o precision.
+    """
+    from pm4py.algo.evaluation.simplicity import algorithm as simplicity
+    from pm4py.algo.evaluation.generalization import algorithm as generalization
+    log = pm4py.convert_to_event_log(df, case_id_key=CASE_ID_KEY)
+    return {
+        "simplicity": float(simplicity.apply(net, variant=simplicity.Variants.SIMPLICITY_ARC_DEGREE)),
+        "generalization": float(generalization.apply(log, net, im, fm,
+            variant=generalization.Variants.GENERALIZATION_TOKEN,
+            parameters={"show_progress_bar": False})),
+    }
+
 def evaluate(df, net, im, fm):
     """
     Valuta un singolo modello su un DataFrame (già convertito in log internamente da PM4Py se necessario).
@@ -30,12 +46,10 @@ def evaluate(df, net, im, fm):
             activity_key=ACTIVITY_KEY, 
             timestamp_key=TIMESTAMP_KEY
         )
-        # Generalization e Simplicity potrebbero essere pesanti, li includiamo se richiesto o li omettiamo per velocità
-        # Per ora manteniamo Fitness e Precision che sono i più critici.
-        
         return {
             "fitness": fitness['log_fitness'], 
-            "precision": precision
+            "precision": precision,
+            **evaluate_additional_dimensions(df, net, im, fm),
         }
     except Exception as e:
         return {"error": str(e)}

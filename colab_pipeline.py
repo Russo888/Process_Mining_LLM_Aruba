@@ -127,7 +127,8 @@ def load_event_log(path):
 def discover_one(df, miner="Inductive Miner", noise_threshold=0.2, dependency_threshold=0.5):
     common = dict(case_id_key=CASE, activity_key=ACTIVITY, timestamp_key=TIME)
     if miner == "Inductive Miner":
-        model = pm4py.discover_petri_net_inductive(df, noise_threshold=noise_threshold, **common)
+        tree = pm4py.discover_process_tree_inductive(df, noise_threshold=noise_threshold, **common)
+        model = pm4py.convert_to_petri_net(tree)
     elif miner == "Heuristic Miner":
         model = pm4py.discover_petri_net_heuristics(df, dependency_threshold=dependency_threshold, **common)
     elif miner == "Alpha Miner":

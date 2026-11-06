@@ -11,7 +11,7 @@ from dashboard_results import (available_results, load_result_bundle, best_model
                                comparison_details, selected_model_context)
 from preprocessing import extract_process_structure
 from dashboard_data import period_summary, zone_summary
-from dashboard_charts import (metric_comparison_chart, zone_distribution_chart,
+from dashboard_charts import (METRICS, metric_comparison_chart, zone_distribution_chart,
                               period_distribution_chart, simplified_dfg)
 
 from llm_chatbot import GeminiEngine
@@ -392,7 +392,7 @@ if st.session_state["data_loaded"]:
     # TAB 3: CONFRONTO METRICHE
     # ============================================================
     with tab3:
-        st.subheader("📈 Confronto Fitness & Precision — tutti i Miner")
+        st.subheader("📈 Qualità dei modelli a confronto")
         st.caption(f"Configurazione attiva: {selected}. Il confronto mostra tutti i modelli dell'esperimento caricato.")
         if diagnostics:
             st.dataframe(comparison_details(diagnostics).sort_values("F1", ascending=False, na_position="last"),
@@ -412,15 +412,16 @@ if st.session_state["data_loaded"]:
                 f1 = 2 * fitness * precision / (fitness + precision) if (fitness + precision) > 0 else 0
                 rows.append({
                     "Modello":   name,
-                    "Fitness":   round(fitness, 4),
-                    "Precision": round(precision, 4),
+                    **{label: m.get(label.lower()) for label in METRICS},
                     "F1 Score":  round(f1, 4)
                 })
             compare_df = pd.DataFrame(rows).set_index("Modello")
 
             # Metriche indipendenti: barre affiancate e scala comune 0–1.
             st.altair_chart(metric_comparison_chart(compare_df), width="stretch")
-            st.caption("Ogni barra rappresenta una metrica separata su scala 0–1; le metriche non vengono sommate.")
+            st.caption("Le barre affiancate confrontano le dimensioni di qualità su scala 0–1. La classifica F1 usa fitness e precision.")
+            if compare_df[METRICS].isna().any().any():
+                st.caption("Le barre mancanti indicano metriche non disponibili nel pacchetto caricato.")
 
             st.divider()
 
@@ -430,10 +431,9 @@ if st.session_state["data_loaded"]:
             for _, row in compare_df.reset_index().iterrows():
                 badge = " 🏆" if row["Modello"] in leaders else ""
                 with st.expander(f"**{row['Modello']}{badge}**"):
-                    cc1, cc2, cc3 = st.columns(3)
-                    cc1.metric("Fitness",   f"{row['Fitness']:.4f}")
-                    cc2.metric("Precision", f"{row['Precision']:.4f}")
-                    cc3.metric("F1 Score",  f"{row['F1 Score']:.4f}")
+                    for col, label in zip(st.columns(4), METRICS):
+                        value = row[label]
+                        col.metric(label, f"{value:.4f}" if pd.notna(value) else "N/D")
 
                     # Interpretazione automatica
                     fitness = row["Fitness"]
@@ -455,6 +455,8 @@ if st.session_state["data_loaded"]:
 |---|---|
 | **Fitness** | Capacità di riprodurre il log, stimata dal replay dei token (0→1; non percentuale di tracce perfette) |
 | **Precision** | Quanto è "stretto" il modello (evita comportamenti non presenti nel log) |
+| **Simplicity** | Semplicità strutturale della rete, misurata attraverso il grado dei nodi |
+| **Generalization** | Misura basata sulla frequenza delle transizioni visitate nel replay dei casi valutati |
 | **F1 Score** | Media armonica di Fitness e Precision — bilancia i due estremi |
 
 > Le interpretazioni dipendono dai dati e dai parametri del mining. Alta fitness e bassa precision indicano un modello permissivo.
