@@ -503,9 +503,10 @@ if st.session_state["data_loaded"]:
                 st.session_state.messages.append(
                     {"role": "user", "content": "Genera un report esecutivo completo del processo analizzando i dati."})
                 with st.spinner(f"Analisi in corso con Google Gemini..."):
-                    rep = ai_engine.generate_process_analysis(f"Metriche: {metrics_context}. DFG: {process_structure_text}", data_ref)
+                    rep = ai_engine.generate_process_analysis(process_structure_text, data_ref)
                     st.session_state.messages.append({"role": "assistant", "content": rep})
-                    st.session_state["last_report"] = rep
+                    if not ai_engine.last_error:
+                        st.session_state["last_report"] = rep
                 st.rerun()
 
             if st.button("⚠️ Trova Anomalie", width="stretch", disabled=not llm_ready):
@@ -565,8 +566,7 @@ if st.session_state["data_loaded"]:
                             with st.spinner(f"Elaborazione via Google Gemini..."):
                                 resp = ai_engine.ask_llm(
                                     prompt,
-                                    f"Modello selezionato: {selected if 'selected' in locals() else best_name}. "
-                                    f"Metriche: {metrics_context}. DFG: {process_structure_text}",
+                                    process_structure_text,
                                     data_ref
                                 )
                                 st.markdown(resp)

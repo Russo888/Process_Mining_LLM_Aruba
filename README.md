@@ -131,7 +131,7 @@ Per il confronto installato i valori sono in `data/experiments/comparison_202610
 
 Gemini usa il Google GenAI SDK (`google-genai`); il modello predefinito resta quello di `config.json`, modificabile dalla sidebar. La migrazione segue la [documentazione ufficiale Google](https://ai.google.dev/gemini-api/docs/migrate).
 
-Il contesto delle azioni identifica esperimento e modello selezionati, metriche, diagnostiche disponibili e un riepilogo della rete, insieme al DFG osservato del log. Cambiando modello vengono cancellati chat e report precedenti. Gemini riceve un campione deterministico di tracce complete fino a 20.000 eventi. Il limite è in righe, non una garanzia sul numero di token; tracce più lunghe del budget sono escluse e l'assenza di un campione viene segnalata.
+Il contesto delle azioni identifica esperimento e modello selezionati, metriche, diagnostiche disponibili e un riepilogo della rete, insieme al DFG osservato del log. Cambiando modello vengono cancellati chat e report precedenti. Gemini riceve un campione deterministico di tracce complete fino a 1.500 eventi per richiesta. Il limite è in righe, non una garanzia sul numero di token; tracce più lunghe del budget sono escluse e l'assenza di un campione viene segnalata.
 
 Il contesto è passato come testo nella richiesta; per Gemini viene inviato al servizio Google soltanto quando si richiede un'analisi. Non vengono creati file temporanei o upload persistenti. Il contesto DFG testuale contiene i primi 30 flussi per frequenza e le prime 5 varianti, abbreviate dopo 20 eventi.
 
